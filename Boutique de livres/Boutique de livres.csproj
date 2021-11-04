@@ -98,10 +98,10 @@
       <DependentUpon>BoutonsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Class1.cs" />
-    <Compile Include="Modeles\Utilisateurs.cs">
+    <Compile Include="Fenetres\Utilisateurs.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modeles\Utilisateurs.Designer.cs">
+    <Compile Include="Fenetres\Utilisateurs.Designer.cs">
       <DependentUpon>Utilisateurs.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Fenetres\Connexion.resx">
@@ -124,7 +124,7 @@
     <EmbeddedResource Include="Fenetres\BoutonsPanel.resx">
       <DependentUpon>BoutonsPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modeles\Utilisateurs.resx">
+    <EmbeddedResource Include="Fenetres\Utilisateurs.resx">
       <DependentUpon>Utilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -152,6 +152,11 @@
   <ItemGroup>
     <None Include="Resources\5465.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Modeles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3800596.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

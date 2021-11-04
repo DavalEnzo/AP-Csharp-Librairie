@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace Boutique_de_livres
 {
+    using BCrypt.Net;
     public partial class Inscription : Form
     {
         MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
@@ -41,9 +43,9 @@ namespace Boutique_de_livres
 
             string mail = Mail.Text;
 
-            string mdp = Mdp.Text;
+            string mdp = BCrypt.HashPassword(Mdp.Text);
 
-            if (Prenom.Text != "" || Nom.Text != "" || Mail.Text != "" || Mdp.Text != "")
+            if (Prenom.Text != "" && Nom.Text != "" && Mail.Text != "" && Mdp.Text != "")
             {
 
                 command.Parameters.AddWithValue("@Prenom", prenom); // Ajout des VALUES de la requête
@@ -66,7 +68,7 @@ namespace Boutique_de_livres
             }
             else
             {
-                MessageBox.Show("Erreur lors de l'inscription ! Vérifiez si toutes les informations sont correctes");
+                MessageBox.Show("Erreur lors de l'inscription ! Vérifiez si toutes les champs ont été remplis");
             }
 
 
@@ -83,6 +85,15 @@ namespace Boutique_de_livres
 
         private void Inscription_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (Prenom.Text == "" || Nom.Text == "" || Mail.Text == "" || Mdp.Text == "")
+            {
+                Application.Exit();
+            }
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

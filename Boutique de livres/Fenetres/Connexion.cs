@@ -40,7 +40,6 @@ using BCrypt.Net;
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Inscription Inscription = new Inscription();
-
             Inscription.Show();
             this.Hide();
         }
@@ -103,6 +102,18 @@ using BCrypt.Net;
             {
                 Application.Exit();
             }
+        }
+
+        private void sinscrireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inscription Inscription = new Inscription();
+            Inscription.Show();
+            this.Hide();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

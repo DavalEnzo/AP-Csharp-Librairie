@@ -39,7 +39,7 @@ namespace Boutique_de_livres
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(436, 41);
+            this.label1.Location = new System.Drawing.Point(506, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(579, 69);
             this.label1.TabIndex = 1;
@@ -50,18 +50,21 @@ namespace Boutique_de_livres
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(324, 140);
+            this.panel1.Location = new System.Drawing.Point(375, 243);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 304);
+            this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 3;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Boutique_de_livres.Properties.Resources.Settings_Metal;
-            this.ClientSize = new System.Drawing.Size(1365, 465);
+            this.ClientSize = new System.Drawing.Size(1504, 692);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "AdminPanel";

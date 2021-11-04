@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
 {
     public partial class ModifProfil : Form
     {
+        AdminPanel AdminPanel = new AdminPanel();
+        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
         public ModifProfil(string identifiant, string Prenom, string Nom, string Email)
         {
             InitializeComponent();
@@ -25,6 +28,40 @@ namespace Boutique_de_livres.Fenetres
         {
 
             label6.Text = prenom.Text + " " + nom.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(id.Text !="" && prenom.Text !="" && nom.Text !="" && email.Text != "")
+            {
+
+                conn.Open();
+
+                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+                command.Parameters.AddWithValue("@id", id.Text);
+
+                command.Parameters.AddWithValue("@nom", prenom.Text);
+
+                command.Parameters.AddWithValue("@prenom", nom.Text);
+
+                command.Parameters.AddWithValue("@email", email.Text); // Ajout des VALUES de la requête
+
+                command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email WHERE idUtilisateur = @id"; // Ecriture requête
+
+                if (command.ExecuteNonQuery() > 0) // Si requête réussie
+                {
+                    MessageBox.Show("Modification effectuée !");
+                    this.Close();
+                    AdminPanel.Show();
+                }
+
+                conn.Close();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez remplir tous les champs afin d'effectuer la modification d'un utilisateur");
+            }
         }
     }
 }
