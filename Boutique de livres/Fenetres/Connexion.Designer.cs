@@ -60,9 +60,10 @@ namespace Boutique_de_livres
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(702, 300);
+            this.label1.Location = new System.Drawing.Point(765, 345);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(491, 67);
+            this.label1.Size = new System.Drawing.Size(389, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Connectez-vous !";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -70,17 +71,19 @@ namespace Boutique_de_livres
             // Mail
             // 
             this.Mail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Mail.Location = new System.Drawing.Point(849, 441);
+            this.Mail.Location = new System.Drawing.Point(876, 459);
+            this.Mail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Mail.Name = "Mail";
-            this.Mail.Size = new System.Drawing.Size(244, 22);
+            this.Mail.Size = new System.Drawing.Size(184, 20);
             this.Mail.TabIndex = 1;
             // 
             // Mdp
             // 
             this.Mdp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Mdp.Location = new System.Drawing.Point(849, 517);
+            this.Mdp.Location = new System.Drawing.Point(876, 521);
+            this.Mdp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Mdp.Name = "Mdp";
-            this.Mdp.Size = new System.Drawing.Size(244, 22);
+            this.Mdp.Size = new System.Drawing.Size(184, 20);
             this.Mdp.TabIndex = 2;
             // 
             // label2
@@ -88,9 +91,10 @@ namespace Boutique_de_livres
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(710, 519);
+            this.label2.Location = new System.Drawing.Point(771, 523);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 20);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mot de passe: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -102,9 +106,10 @@ namespace Boutique_de_livres
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(710, 441);
+            this.label3.Location = new System.Drawing.Point(771, 459);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Adresse Mail:";
             // 
@@ -115,9 +120,10 @@ namespace Boutique_de_livres
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(458, 229);
+            this.label4.Location = new System.Drawing.Point(583, 287);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(904, 48);
+            this.label4.Size = new System.Drawing.Size(739, 39);
             this.label4.TabIndex = 5;
             this.label4.Text = "Bienvenue sur l\'application de la Librairie du net";
             // 
@@ -126,9 +132,10 @@ namespace Boutique_de_livres
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(889, 565);
+            this.button1.Location = new System.Drawing.Point(906, 560);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 35);
+            this.button1.Size = new System.Drawing.Size(112, 28);
             this.button1.TabIndex = 6;
             this.button1.Text = "Se Connecter";
             this.button1.UseVisualStyleBackColor = false;
@@ -139,9 +146,10 @@ namespace Boutique_de_livres
             this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.linkLabel1.Location = new System.Drawing.Point(981, 630);
+            this.linkLabel1.Location = new System.Drawing.Point(975, 613);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(112, 29);
+            this.linkLabel1.Size = new System.Drawing.Size(87, 24);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "S\'inscrire";
@@ -153,9 +161,10 @@ namespace Boutique_de_livres
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(753, 630);
+            this.label5.Location = new System.Drawing.Point(804, 613);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(222, 29);
+            this.label5.Size = new System.Drawing.Size(174, 24);
             this.label5.TabIndex = 8;
             this.label5.Text = "Pas encore inscrit ?";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -164,7 +173,8 @@ namespace Boutique_de_livres
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-489, -322);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -35);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1920, 1080);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -179,7 +189,8 @@ namespace Boutique_de_livres
             this.infosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1902, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1904, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -189,20 +200,20 @@ namespace Boutique_de_livres
             this.sinscrireToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // sinscrireToolStripMenuItem
             // 
             this.sinscrireToolStripMenuItem.Name = "sinscrireToolStripMenuItem";
-            this.sinscrireToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sinscrireToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.sinscrireToolStripMenuItem.Text = "S\'inscrire";
             this.sinscrireToolStripMenuItem.Click += new System.EventHandler(this.sinscrireToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -212,13 +223,13 @@ namespace Boutique_de_livres
             this.aideToolStripMenuItem,
             this.aProposDeToolStripMenuItem});
             this.infosToolStripMenuItem.Name = "infosToolStripMenuItem";
-            this.infosToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.infosToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.infosToolStripMenuItem.Text = "Infos";
             // 
             // aideToolStripMenuItem
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // aProposDeToolStripMenuItem
@@ -227,26 +238,26 @@ namespace Boutique_de_livres
             this.versionToolStripMenuItem,
             this.licenceToolStripMenuItem});
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de";
             // 
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
             // licenceToolStripMenuItem
             // 
             this.licenceToolStripMenuItem.Name = "licenceToolStripMenuItem";
-            this.licenceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.licenceToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.licenceToolStripMenuItem.Text = "Licence";
             // 
             // Connexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel1);
@@ -258,6 +269,7 @@ namespace Boutique_de_livres
             this.Controls.Add(this.Mail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Librairie du net";
