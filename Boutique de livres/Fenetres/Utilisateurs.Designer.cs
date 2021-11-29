@@ -54,7 +54,7 @@ namespace Boutique_de_livres
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(417, 161);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -66,10 +66,10 @@ namespace Boutique_de_livres
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(805, 429);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(803, 429);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 38);
+            this.button3.Size = new System.Drawing.Size(157, 43);
             this.button3.TabIndex = 7;
             this.button3.Text = "Modifier Utilisateur";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,7 +92,7 @@ namespace Boutique_de_livres
             // 
             this.searchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchName.Location = new System.Drawing.Point(881, 85);
-            this.searchName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchName.Margin = new System.Windows.Forms.Padding(2);
             this.searchName.Name = "searchName";
             this.searchName.Size = new System.Drawing.Size(254, 21);
             this.searchName.TabIndex = 9;
@@ -107,7 +107,7 @@ namespace Boutique_de_livres
             "Nom",
             "Email"});
             this.selectSearch.Location = new System.Drawing.Point(696, 85);
-            this.selectSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.selectSearch.Margin = new System.Windows.Forms.Padding(2);
             this.selectSearch.Name = "selectSearch";
             this.selectSearch.Size = new System.Drawing.Size(147, 21);
             this.selectSearch.TabIndex = 10;
@@ -120,11 +120,11 @@ namespace Boutique_de_livres
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(612, 429);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(606, 429);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(149, 38);
+            this.button2.Size = new System.Drawing.Size(155, 43);
             this.button2.TabIndex = 6;
             this.button2.Text = "Supprimer Utilisateur";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,7 +136,7 @@ namespace Boutique_de_livres
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(396, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(798, 461);
             this.pictureBox1.TabIndex = 11;
@@ -147,7 +147,7 @@ namespace Boutique_de_livres
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(435, 67);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 54);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +168,7 @@ namespace Boutique_de_livres
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Utilisateurs";
             this.Size = new System.Drawing.Size(1196, 512);
             this.Load += new System.EventHandler(this.UserControl1_Load);

@@ -56,7 +56,7 @@ namespace Boutique_de_livres.Fenetres
             // email
             // 
             this.email.Location = new System.Drawing.Point(334, 313);
-            this.email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.email.Margin = new System.Windows.Forms.Padding(2);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(300, 20);
             this.email.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace Boutique_de_livres.Fenetres
             // prenom
             // 
             this.prenom.Location = new System.Drawing.Point(334, 185);
-            this.prenom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prenom.Margin = new System.Windows.Forms.Padding(2);
             this.prenom.Name = "prenom";
             this.prenom.Size = new System.Drawing.Size(300, 20);
             this.prenom.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace Boutique_de_livres.Fenetres
             // nom
             // 
             this.nom.Location = new System.Drawing.Point(334, 249);
-            this.nom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nom.Margin = new System.Windows.Forms.Padding(2);
             this.nom.Name = "nom";
             this.nom.Size = new System.Drawing.Size(300, 20);
             this.nom.TabIndex = 3;
@@ -103,7 +103,7 @@ namespace Boutique_de_livres.Fenetres
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(245, 302);
+            this.label4.Location = new System.Drawing.Point(247, 304);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 29);
@@ -113,7 +113,7 @@ namespace Boutique_de_livres.Fenetres
             // id
             // 
             this.id.Location = new System.Drawing.Point(334, 127);
-            this.id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.id.Margin = new System.Windows.Forms.Padding(2);
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(300, 20);
@@ -170,7 +170,7 @@ namespace Boutique_de_livres.Fenetres
             this.Controls.Add(this.prenom);
             this.Controls.Add(this.email);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(959, 509);
             this.Name = "ModifProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

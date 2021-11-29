@@ -48,6 +48,7 @@ C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique d
 C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique_de_livres.Utilisateurs.resources
 C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique de livres.csproj.GenerateResource.cache
 C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique de livres.csproj.CoreCompileInputs.cache
-C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique de livres.csproj.CopyComplete
 C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique de livres.exe
 C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique de livres.pdb
+C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.Commentaires.resources
+C:\Users\Enzo Daval\Desktop\AP C# Boutique Livres\AP-Csharp-Librairie\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.detailsCommentaire.resources

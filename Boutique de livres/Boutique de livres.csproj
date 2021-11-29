@@ -77,6 +77,12 @@
     <Compile Include="Fenetres\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fenetres\DetailsCommentaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenetres\DetailsCommentaire.Designer.cs">
+      <DependentUpon>DetailsCommentaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\ModifUtilisateur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="Fenetres\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Commentaires.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fenetres\Commentaires.Designer.cs">
+      <DependentUpon>Commentaires.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,11 +122,17 @@
     <EmbeddedResource Include="Fenetres\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fenetres\DetailsCommentaire.resx">
+      <DependentUpon>DetailsCommentaire.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\ModifUtilisateur.resx">
       <DependentUpon>ModifUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenetres\Commentaires.resx">
+      <DependentUpon>Commentaires.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -22,7 +22,7 @@ namespace Boutique_de_livres
         {
             InitializeComponent();
 
-            this.fenetrePrincipale = fenetre;
+            fenetrePrincipale = fenetre;
 
             selectSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             selectSearch.SelectedIndex = 0;
@@ -80,7 +80,7 @@ namespace Boutique_de_livres
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet utilisateur ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet utilisateur ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (res == DialogResult.OK)
             {
                 if (dataGridView1.CurrentCell.Value == null)
@@ -130,17 +130,24 @@ namespace Boutique_de_livres
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
 
-            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
-           string id = (Convert.ToString(selectedRow.Cells["id Utilisateur"].Value));
-           string prenom = (Convert.ToString(selectedRow.Cells["Prénom"].Value));
-           string nom = (Convert.ToString(selectedRow.Cells["Nom"].Value));
-           string email = (Convert.ToString(selectedRow.Cells["Email"].Value));
+                string id = (Convert.ToString(selectedRow.Cells["id Utilisateur"].Value));
+                string prenom = (Convert.ToString(selectedRow.Cells["Prénom"].Value));
+                string nom = (Convert.ToString(selectedRow.Cells["Nom"].Value));
+                string email = (Convert.ToString(selectedRow.Cells["Email"].Value));
 
-            ModifProfil modifP = new ModifProfil(id,prenom,nom,email);
-            modifP.Show();
+                ModifProfil modifP = new ModifProfil(id, prenom, nom, email);
+                modifP.Show();
+            }
+            else
+            {
+                MessageBox.Show("Aucune colonne sélectionnée");
+            }
         }
 
         private void searchName_TextChanged(object sender, EventArgs e)

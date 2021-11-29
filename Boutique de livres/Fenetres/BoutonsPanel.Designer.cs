@@ -36,9 +36,10 @@ namespace Boutique_de_livres
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 138);
+            this.button1.Location = new System.Drawing.Point(0, 112);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 44);
+            this.button1.Size = new System.Drawing.Size(110, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "Utilisateurs";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace Boutique_de_livres
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(0, 205);
+            this.button2.Location = new System.Drawing.Point(0, 167);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 46);
+            this.button2.Size = new System.Drawing.Size(110, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@ namespace Boutique_de_livres
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(0, 16);
+            this.button3.Location = new System.Drawing.Point(0, 13);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 44);
+            this.button3.Size = new System.Drawing.Size(92, 36);
             this.button3.TabIndex = 2;
             this.button3.Text = "Retour";
             this.button3.UseVisualStyleBackColor = true;
@@ -67,14 +70,15 @@ namespace Boutique_de_livres
             // 
             // BoutonsPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BoutonsPanel";
-            this.Size = new System.Drawing.Size(160, 436);
+            this.Size = new System.Drawing.Size(120, 354);
             this.ResumeLayout(false);
 
         }

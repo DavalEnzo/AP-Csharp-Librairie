@@ -72,7 +72,7 @@ namespace Boutique_de_livres
             // 
             this.Mail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Mail.Location = new System.Drawing.Point(876, 459);
-            this.Mail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Mail.Margin = new System.Windows.Forms.Padding(2);
             this.Mail.Name = "Mail";
             this.Mail.Size = new System.Drawing.Size(184, 20);
             this.Mail.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace Boutique_de_livres
             // 
             this.Mdp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Mdp.Location = new System.Drawing.Point(876, 521);
-            this.Mdp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Mdp.Margin = new System.Windows.Forms.Padding(2);
             this.Mdp.Name = "Mdp";
             this.Mdp.Size = new System.Drawing.Size(184, 20);
             this.Mdp.TabIndex = 2;
@@ -133,7 +133,7 @@ namespace Boutique_de_livres
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(906, 560);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 28);
             this.button1.TabIndex = 6;
@@ -171,10 +171,13 @@ namespace Boutique_de_livres
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1920, 1080);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -269,7 +272,7 @@ namespace Boutique_de_livres
             this.Controls.Add(this.Mail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Librairie du net";
