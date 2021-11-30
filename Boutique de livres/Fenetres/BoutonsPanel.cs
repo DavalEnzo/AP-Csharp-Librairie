@@ -22,9 +22,9 @@ namespace Boutique_de_livres
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button3.Visible = true;
             fenetrePrincipale.panel1.Controls.Clear();
             Utilisateurs myForm = new Utilisateurs(fenetrePrincipale);
+            fenetrePrincipale.panel2.Visible = false; ;
             myForm.AutoScroll = true;
             fenetrePrincipale.panel1.Controls.Add(myForm);
             myForm.Show();
@@ -34,6 +34,7 @@ namespace Boutique_de_livres
         {
             fenetrePrincipale.panel1.Controls.Clear();
             Commentaires myForm = new Commentaires(fenetrePrincipale);
+            fenetrePrincipale.panel2.Visible = false;
             myForm.AutoScroll = true;
             fenetrePrincipale.panel1.Controls.Add(myForm);
             myForm.Show();
@@ -41,11 +42,6 @@ namespace Boutique_de_livres
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BoutonsPanel myForm = new BoutonsPanel(fenetrePrincipale);
-            myForm.AutoScroll = true;
-            fenetrePrincipale.panel1.Controls.Clear();
-            fenetrePrincipale.panel1.Controls.Add(myForm);
-            myForm.Show();
         }
     }
 }

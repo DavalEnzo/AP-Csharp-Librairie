@@ -93,6 +93,16 @@ namespace Boutique_de_livres.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngkit_username_icon_png_2035011 {
+            get {
+                object obj = ResourceManager.GetObject("pngkit_username-icon-png_2035011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settings_Metal {
             get {
                 object obj = ResourceManager.GetObject("Settings-Metal", resourceCulture);

@@ -45,14 +45,16 @@ namespace Boutique_de_livres
                 string prénom = reader.GetString(1);
                 string nom = reader.GetString(2);
                 string email = reader.GetString(3);
+                string verif = reader.GetString(6);
 
-                dataGridView1.ColumnCount = 4;
+                dataGridView1.ColumnCount = 5;
                 dataGridView1.Columns[0].Name = "id Utilisateur";
                 dataGridView1.Columns[2].Name = "Nom";
                 dataGridView1.Columns[1].Name = "Prénom";
                 dataGridView1.Columns[3].Name = "Email";
+                dataGridView1.Columns[4].Name = "Admin";
 
-                dataGridView1.Rows.Add(idUtilisateur, nom, prénom, email);
+                dataGridView1.Rows.Add(idUtilisateur, nom, prénom, email, verif);
 
                 // Si nullable, faire un GetValue au lieu de GetString sinon cause bug
             };
@@ -140,8 +142,10 @@ namespace Boutique_de_livres
                 string prenom = (Convert.ToString(selectedRow.Cells["Prénom"].Value));
                 string nom = (Convert.ToString(selectedRow.Cells["Nom"].Value));
                 string email = (Convert.ToString(selectedRow.Cells["Email"].Value));
+                string verif = (Convert.ToString(selectedRow.Cells["Admin"].Value));
 
-                ModifProfil modifP = new ModifProfil(id, prenom, nom, email);
+                ModifProfil modifP = new ModifProfil(id, prenom, nom, email, verif);
+                fenetrePrincipale.Hide();
                 modifP.Show();
             }
             else
@@ -176,8 +180,9 @@ namespace Boutique_de_livres
                     string nom = reader.GetString(1);
                     string prénom = reader.GetString(2);
                     string email = reader.GetString(3);
+                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email);
+                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
                 }
                 
             }
@@ -203,8 +208,9 @@ namespace Boutique_de_livres
                     string nom = reader.GetString(1);
                     string prénom = reader.GetString(2);
                     string email = reader.GetString(3);
+                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email);
+                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
                 }
             }
             else if(selectSearch.Text == "Nom")
@@ -229,8 +235,9 @@ namespace Boutique_de_livres
                     string nom = reader.GetString(1);
                     string prénom = reader.GetString(2);
                     string email = reader.GetString(3);
+                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email);
+                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
                 }
             }
             else if(selectSearch.Text == "Email")
@@ -255,11 +262,22 @@ namespace Boutique_de_livres
                     string nom = reader.GetString(1);
                     string prénom = reader.GetString(2);
                     string email = reader.GetString(3);
+                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email);
+                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
                 }
             }
             conn.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BoutonsPanel myForm = new BoutonsPanel(fenetrePrincipale);
+            myForm.AutoScroll = true;
+            fenetrePrincipale.panel1.Controls.Clear();
+            fenetrePrincipale.panel2.Visible = true;
+            fenetrePrincipale.panel1.Controls.Add(myForm);
+            myForm.Show();
         }
     }
 }

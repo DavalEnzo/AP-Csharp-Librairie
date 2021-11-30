@@ -40,6 +40,8 @@ namespace Boutique_de_livres.Fenetres
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.permissions = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +135,7 @@ namespace Boutique_de_livres.Fenetres
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(408, 374);
+            this.button1.Location = new System.Drawing.Point(408, 432);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 33);
@@ -152,13 +154,36 @@ namespace Boutique_de_livres.Fenetres
             this.label6.Size = new System.Drawing.Size(0, 44);
             this.label6.TabIndex = 10;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(214, 365);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(256, 29);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Droits d\'administration:";
+            // 
+            // permissions
+            // 
+            this.permissions.AutoSize = true;
+            this.permissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permissions.Location = new System.Drawing.Point(475, 373);
+            this.permissions.Name = "permissions";
+            this.permissions.Size = new System.Drawing.Size(15, 14);
+            this.permissions.TabIndex = 13;
+            this.permissions.UseVisualStyleBackColor = true;
+            // 
             // ModifProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(943, 470);
+            this.ClientSize = new System.Drawing.Size(948, 527);
+            this.Controls.Add(this.permissions);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
@@ -175,6 +200,7 @@ namespace Boutique_de_livres.Fenetres
             this.Name = "ModifProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modification Profil";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifProfil_FormClosing);
             this.Load += new System.EventHandler(this.ModifProfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,5 +220,7 @@ namespace Boutique_de_livres.Fenetres
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox permissions;
     }
 }

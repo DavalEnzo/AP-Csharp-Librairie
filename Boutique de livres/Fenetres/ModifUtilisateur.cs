@@ -15,13 +15,18 @@ namespace Boutique_de_livres.Fenetres
     {
         AdminPanel AdminPanel = new AdminPanel();
         MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
-        public ModifProfil(string identifiant, string Prenom, string Nom, string Email)
+        public ModifProfil(string identifiant, string Prenom, string Nom, string Email, string verif)
         {
             InitializeComponent();
             id.Text = identifiant;
             prenom.Text = Prenom;
             nom.Text = Nom;
             email.Text = Email;
+
+            if(verif == "1")
+            {
+                permissions.Checked = true;
+            }
         }
 
         private void ModifProfil_Load(object sender, EventArgs e)
@@ -47,7 +52,18 @@ namespace Boutique_de_livres.Fenetres
 
                 command.Parameters.AddWithValue("@email", email.Text); // Ajout des VALUES de la requête
 
-                command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email WHERE idUtilisateur = @id"; // Ecriture requête
+                if (permissions.Checked)
+                {
+                    command.Parameters.AddWithValue("@verif", 1);
+
+                    command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@verif", 0);
+                    command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
+                }
+
 
                 if (command.ExecuteNonQuery() > 0) // Si requête réussie
                 {
@@ -62,6 +78,11 @@ namespace Boutique_de_livres.Fenetres
             {
                 MessageBox.Show("Vous devez remplir tous les champs afin d'effectuer la modification d'un utilisateur");
             }
+        }
+
+        private void ModifProfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AdminPanel.Show();
         }
     }
 }

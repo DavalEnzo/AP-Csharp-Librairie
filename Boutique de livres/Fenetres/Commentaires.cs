@@ -83,5 +83,15 @@ namespace Boutique_de_livres.Fenetres
                 MessageBox.Show("Aucune colonne sélectionnée");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BoutonsPanel myForm = new BoutonsPanel(fenetrePrincipale);
+            myForm.AutoScroll = true;
+            fenetrePrincipale.panel1.Controls.Clear();
+            fenetrePrincipale.panel2.Visible = true;
+            fenetrePrincipale.panel1.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }
