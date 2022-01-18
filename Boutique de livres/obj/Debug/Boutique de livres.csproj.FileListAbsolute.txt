@@ -1,0 +1,54 @@
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\Boutique de livres.exe.config
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\Boutique de livres.exe
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\Boutique de livres.pdb
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.csproj.AssemblyReference.cache
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Properties.Resources.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.csproj.GenerateResource.cache
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.exe
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.pdb
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\MySql.Data.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.csproj.CopyComplete
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Connexion.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Inscription.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Buffers.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Memory.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Buffers.xml
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Memory.xml
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.BoutonsPanel.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Utilisateurs.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.AdminPanel.resources
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.ModifProfil.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.AssemblyReference.cache
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Connexion.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.AdminPanel.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.ModifProfil.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Inscription.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.UserControl1.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.BoutonsPanel.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Utilisateurs.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.GenerateResource.cache
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\Boutique de livres.exe.config
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\Boutique de livres.exe
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\Boutique de livres.pdb
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Buffers.dll
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Memory.dll
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Buffers.xml
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Memory.xml
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Properties.Resources.resources
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.CoreCompileInputs.cache
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.CopyComplete
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.exe
+C:\Users\madan\OneDrive\Bureau\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.pdb
