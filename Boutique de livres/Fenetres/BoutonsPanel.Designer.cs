@@ -56,7 +56,7 @@ namespace Boutique_de_livres
             this.DashBoardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashBoardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.DashBoardButton.UseVisualStyleBackColor = true;
-            this.DashBoardButton.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // EditeursMenu
             // 
@@ -188,13 +188,14 @@ namespace Boutique_de_livres
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BoutonsPanel";
             this.Padding = new System.Windows.Forms.Padding(0, 200, 0, 0);
-            this.Size = new System.Drawing.Size(239, 739);
+            this.Size = new System.Drawing.Size(190, 556);
             this.Load += new System.EventHandler(this.BoutonsPanel_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Button UtilisateurMenu;
         private System.Windows.Forms.Button LivresMenu;
         private System.Windows.Forms.Button CommandesMenu;
@@ -202,5 +203,6 @@ namespace Boutique_de_livres
         private System.Windows.Forms.Button StatMenu;
         private System.Windows.Forms.Button EditeursMenu;
         private System.Windows.Forms.Button DashBoardButton;
+
     }
 }

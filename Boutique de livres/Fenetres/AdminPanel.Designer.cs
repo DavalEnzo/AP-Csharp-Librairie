@@ -42,6 +42,7 @@ namespace Boutique_de_livres
             this.UserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClosePic)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -49,14 +50,15 @@ namespace Boutique_de_livres
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(530, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(539, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 55);
+            this.label1.Size = new System.Drawing.Size(941, 108);
             this.label1.TabIndex = 1;
             this.label1.Text = "Panel administrateur";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -136,6 +138,21 @@ namespace Boutique_de_livres
             this.ClosePic.TabIndex = 6;
             this.ClosePic.TabStop = false;
             this.ClosePic.Click += new System.EventHandler(this.ClosePic_Click_1);
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(281, 197);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(0, 0);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Location = new System.Drawing.Point(501, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1005, 549);
+            this.panel2.TabIndex = 4;
             // 
             // AdminPanel
             // 
@@ -149,6 +166,11 @@ namespace Boutique_de_livres
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::Boutique_de_livres.Properties.Resources.Settings_Metal;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,5 +196,6 @@ namespace Boutique_de_livres
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NomUtilisateur;
         private System.Windows.Forms.PictureBox ClosePic;
+        public System.Windows.Forms.Panel panel2;
     }
 }

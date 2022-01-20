@@ -40,7 +40,6 @@ using BCrypt.Net;
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Inscription Inscription = new Inscription();
-
             Inscription.Show();
             this.Hide();
         }
@@ -59,13 +58,14 @@ using BCrypt.Net;
 
             command.Parameters.AddWithValue("@mdp", mdp);
 
-            command.CommandText = "SELECT nom,prenom,mdp FROM utilisateurs WHERE email = @email"; // Ecriture requête
+            command.CommandText = "SELECT nom,prenom,mdp,idPermission FROM utilisateurs WHERE email = @email"; // Ecriture requête
 
             MySqlDataReader reader = command.ExecuteReader();
 
             bool emailValide = false;
 
-            while (reader.Read()) {
+            while (reader.Read())
+            {
                 // Si la colonne est un string :  (si vous récupérez plusieurs résultats dans votre requête, incrémenter le 0 à 1, puis 2...)
                 string nom = reader.GetString(0);
 
@@ -73,29 +73,34 @@ using BCrypt.Net;
 
                 string mdpCrypte = reader.GetString(2);
 
-                if (!BCrypt.Verify(Mdp.Text, mdpCrypte))
-                {
-                   
-                    MessageBox.Show("Le mot de passe est incorrect");
-                }
-                else if(BCrypt.Verify(Mdp.Text, mdpCrypte))
-                {
-                    Properties.Settings.Default.Name =prénom+" "+nom;
-                    Properties.Settings.Default.Mdp = mdpCrypte;
-                    Properties.Settings.Default.Save();
-                    MessageBox.Show("Bienvenue" + " " + prénom + " " + nom + " !");
-                    AdminPanel adminPanel = new AdminPanel();
+                int idPermission = reader.GetInt32(3);
 
-                    adminPanel.Show();
-                    this.Hide();
-                }
-                emailValide = true;
-            }
+                if (idPermission == 1)
+                {
 
-            if(emailValide == false)
-            {
-               
-                MessageBox.Show("Aucun compte avec cette adresse mail n'a été trouvé ou rien n'a été entré dans le champ mail");
+                    if (!BCrypt.Verify(Mdp.Text, mdpCrypte))
+                    {
+                        MessageBox.Show("Le mot de passe est incorrect");
+                    }
+                    else if (BCrypt.Verify(Mdp.Text, mdpCrypte))
+                    {
+                        MessageBox.Show("Bienvenue" + " " + prénom + " " + nom + " !");
+                        AdminPanel adminPanel = new AdminPanel();
+
+                        adminPanel.Show();
+                        this.Hide();
+                    }
+                    emailValide = true;
+
+                    if (emailValide == false)
+                    {
+                        MessageBox.Show("Aucun compte avec cette adresse mail n'a été trouvé ou rien n'a été entré dans le champ mail");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vous n'êtes pas autorisé à utiliser cette application");
+                }
             }
         conn.Close();
         }
@@ -108,6 +113,18 @@ using BCrypt.Net;
             {
                 Application.Exit();
             }
+        }
+
+        private void sinscrireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inscription Inscription = new Inscription();
+            Inscription.Show();
+            this.Hide();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

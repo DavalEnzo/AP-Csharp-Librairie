@@ -63,6 +63,16 @@ namespace Boutique_de_livres.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3800596 {
+            get {
+                object obj = ResourceManager.GetObject("3800596", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5465 {
             get {
                 object obj = ResourceManager.GetObject("5465", resourceCulture);
@@ -136,6 +146,16 @@ namespace Boutique_de_livres.Properties {
         internal static System.Drawing.Bitmap G5Z8 {
             get {
                 object obj = ResourceManager.GetObject("G5Z8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngkit_username_icon_png_2035011 {
+            get {
+                object obj = ResourceManager.GetObject("pngkit_username-icon-png_2035011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

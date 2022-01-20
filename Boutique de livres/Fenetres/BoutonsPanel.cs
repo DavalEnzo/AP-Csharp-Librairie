@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boutique_de_livres.Fenetres;
 
 namespace Boutique_de_livres
 {
@@ -45,7 +46,12 @@ namespace Boutique_de_livres
 
         private void CommentairesMenu_Click(object sender, EventArgs e)
         {
-
+            fenetrePrincipale.panel1.Controls.Clear();
+            Commentaires myForm = new Commentaires(fenetrePrincipale);
+            fenetrePrincipale.panel2.Visible = false;
+            myForm.AutoScroll = true;
+            fenetrePrincipale.panel1.Controls.Add(myForm);
+            myForm.Show();
         }
 
         private void CommandesMenu_Click(object sender, EventArgs e)
@@ -58,10 +64,10 @@ namespace Boutique_de_livres
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            fenetrePrincipale.panel1.Controls.Clear();
-            /*fenetrePrincipale.panel1.Controls.Add();*/
         }
     }
 }

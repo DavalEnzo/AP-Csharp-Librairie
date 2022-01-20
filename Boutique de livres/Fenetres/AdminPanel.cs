@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Boutique_de_livres.Fenetres;
 
 namespace Boutique_de_livres
 {
     public partial class AdminPanel : Form
     {
+        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
         public AdminPanel()
         {
             InitializeComponent();
@@ -20,7 +23,12 @@ namespace Boutique_de_livres
             panel1.Controls.Clear();
             MenuAdmin.Controls.Add(myForm);
             myForm.Show();
-            NomUtilisateur.Text = Properties.Settings.Default.Name;
+            
+            this.panel2.Controls.Clear();
+            pageAccueil accueil = new pageAccueil(this);
+            accueil.AutoScroll = true;
+            this.panel2.Controls.Add(accueil);
+            accueil.Show();
         }
 
 
@@ -32,8 +40,11 @@ namespace Boutique_de_livres
         {
             Application.Exit();
         }
-
         private void MenuAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
