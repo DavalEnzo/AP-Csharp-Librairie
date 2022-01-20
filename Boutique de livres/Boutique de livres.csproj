@@ -145,6 +145,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Fenetres\Utilisateurs.Designer.cs">
+     <DependentUpon>Utilisateurs.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Fenetres\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>

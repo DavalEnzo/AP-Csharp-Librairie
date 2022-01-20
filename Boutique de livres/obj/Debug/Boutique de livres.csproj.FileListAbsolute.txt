@@ -1,4 +1,3 @@
-C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.AssemblyReference.cache
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Connexion.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.AdminPanel.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.detailsCommentaire.resources
@@ -8,7 +7,6 @@ C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Bou
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.pageAccueil.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Properties.Resources.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.BoutonsPanel.resources
-C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Utilisateurs.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.GenerateResource.cache
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Inscription.resources
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.CoreCompileInputs.cache
@@ -28,3 +26,5 @@ C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\bin\Debug\Sys
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.CopyComplete
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.exe
 C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.pdb
+C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.Utilisateurs.resources
+C:\Users\Yanis\Desktop\AP-Csharp-Librairie-main\Boutique de livres\obj\Debug\Boutique de livres.csproj.AssemblyReference.cache

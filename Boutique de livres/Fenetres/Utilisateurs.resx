@@ -53,6 +53,7 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
+
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -120,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEZPSURBVHhe7d0H
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEZPSURBVHhe7d0H
         eFRlusBx7KtIU1FAuigoUiM9QIAAUhKaoYVeAgSQnlB1KNJbQg0dBNRYALm7d1d3V9313t29skUhJCSE
         EBKSkB4S0pPvfmfmG8AtCiGZc87M//c87zOw+6z7nknw+zOZUgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADOo3lo2OMv7bpc7+V9ka1f3h/ZW86oV0Iuz2qyP+pd+evg
@@ -427,7 +428,7 @@
   <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAhvvAAIb7wFJFxuDAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAhvqAAIb6gFkrX51AAAAB3RJ
         TUUH5AsCDRwL5aUdKAAABDdJREFUaEPt2W1MU1cYB/DTQkGcUTZdpvvgfP1ipqAuOkkMQU18AesHNcFk
         H5ZB5uYXteKcxMVNMC7ZYqIuuviS+PZRhYJoAVcik04my5zZTCQmvoKQwYJRpAjr8f805+gJadfT23tb
         XPpPfjFCvH3+3ocbci5LJplkIsYGb8IkmAbTLUDXfQ/GAH2eKUmBbPgOrsF9aLPQPbgK38AEiCkZ8CW0
@@ -452,7 +453,7 @@
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABr9JREFUaEPtmUuMFUUUhrkoiQ8UNbjAhTG4wIzOG2aGYXQiLDQm7pxEZaHGqBiJ
+        vgAADr4B6kKxwAAABr9JREFUaEPtmUuMFUUUhrkoiQ8UNbjAhTG4wIzOG2aGYXQiLDQm7pxEZaHGqBiJ
         L9xjojEZWAw+WaBsdGVMlKBLIT7wFUMMiS4MPoNLUcGgwTD4/TV1yqLudN/q7qtmjJP8+atPnb/Pfzh9
         +/ZtFulv69atiyNuAeOWxSxnamrqrJiT/abaoO+C9r/bmOX+31jMyX5TbdB3QdumCQlCjQJNtEHfBW2b
         Rn8huUaBJtrUXBNtm8a4rjnjOtrUXBNtkcb91SlgXEebmmuiLdLMcXKCnALGIVZBm5proi3SBK3WVQoY

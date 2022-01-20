@@ -1,4 +1,4 @@
-﻿namespace Boutique_de_livres
+﻿namespace Boutique_de_livres.Fenetres
 {
     partial class Utilisateurs
     {
@@ -10,7 +10,7 @@
         /// <summary> 
         /// Nettoyage des ressources utilisées.
         /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -33,14 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchName = new System.Windows.Forms.TextBox();
             this.selectSearch = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.titreFenetre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -53,7 +52,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(417, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(126, 193);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -67,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(503, 78);
+            this.label1.Location = new System.Drawing.Point(229, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 29);
@@ -76,8 +75,9 @@
             // 
             // searchName
             // 
+            this.searchName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchName.Location = new System.Drawing.Point(881, 85);
+            this.searchName.Location = new System.Drawing.Point(607, 98);
             this.searchName.Margin = new System.Windows.Forms.Padding(2);
             this.searchName.Name = "searchName";
             this.searchName.Size = new System.Drawing.Size(254, 21);
@@ -86,23 +86,36 @@
             // 
             // selectSearch
             // 
+            this.selectSearch.BackColor = System.Drawing.Color.White;
             this.selectSearch.FormattingEnabled = true;
             this.selectSearch.Items.AddRange(new object[] {
             "Identifiant",
             "Prénom",
             "Nom",
             "Email"});
-            this.selectSearch.Location = new System.Drawing.Point(696, 85);
+            this.selectSearch.Location = new System.Drawing.Point(422, 98);
             this.selectSearch.Margin = new System.Windows.Forms.Padding(2);
             this.selectSearch.Name = "selectSearch";
             this.selectSearch.Size = new System.Drawing.Size(147, 21);
             this.selectSearch.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(53, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 54);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Retour";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(435, 67);
+            this.pictureBox2.Location = new System.Drawing.Point(161, 80);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 54);
@@ -112,10 +125,11 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(803, 429);
+            this.button3.Location = new System.Drawing.Point(529, 442);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 43);
@@ -133,7 +147,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(606, 429);
+            this.button2.Location = new System.Drawing.Point(332, 442);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -144,34 +158,26 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
+            // titreFenetre
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(396, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(798, 461);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(241, 67);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 54);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Retour";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.titreFenetre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titreFenetre.AutoSize = true;
+            this.titreFenetre.BackColor = System.Drawing.Color.White;
+            this.titreFenetre.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titreFenetre.Location = new System.Drawing.Point(323, 11);
+            this.titreFenetre.Name = "titreFenetre";
+            this.titreFenetre.Size = new System.Drawing.Size(430, 42);
+            this.titreFenetre.TabIndex = 14;
+            this.titreFenetre.Text = "Gestion des utilisateurs";
             // 
             // Utilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.titreFenetre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -180,14 +186,13 @@
             this.Controls.Add(this.searchName);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
+            this.Location = new System.Drawing.Point(396, 49);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Utilisateurs";
-            this.Size = new System.Drawing.Size(1196, 512);
+            this.Size = new System.Drawing.Size(1018, 557);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,8 +205,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchName;
         private System.Windows.Forms.ComboBox selectSearch;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label titreFenetre;
     }
 }

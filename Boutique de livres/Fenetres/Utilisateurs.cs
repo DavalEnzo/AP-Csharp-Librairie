@@ -8,14 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Boutique_de_livres.Fenetres;
 
-namespace Boutique_de_livres
+namespace Boutique_de_livres.Fenetres
 {
     public partial class Utilisateurs : UserControl
     {
         private AdminPanel fenetrePrincipale;
-
         MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
 
         public Utilisateurs(AdminPanel fenetre)
@@ -277,5 +275,6 @@ namespace Boutique_de_livres
             fenetrePrincipale.panel1.Controls.Clear();
             fenetrePrincipale.panel2.Visible = true;
         }
+
     }
 }
