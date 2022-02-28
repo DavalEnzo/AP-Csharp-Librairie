@@ -15,7 +15,7 @@ namespace Boutique_de_livres
     using BCrypt.Net;
     public partial class Inscription : Form
     {
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
+        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
 
         Connexion connexion = new Connexion();
         public Inscription()

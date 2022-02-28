@@ -14,7 +14,7 @@ namespace Boutique_de_livres
 using BCrypt.Net;
     public partial class Connexion : Form
     {
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd="); // Données de connexion à la BDD
+        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd="); // Données de connexion à la BDD
         public Connexion()
         {
             InitializeComponent();

@@ -61,13 +61,24 @@ namespace Boutique_de_livres
 
         private void LivresMenu_Click(object sender, EventArgs e)
         {
-
+            fenetrePrincipale.panel1.Controls.Clear();
+            Livres myForm = new Livres(fenetrePrincipale);
+            fenetrePrincipale.panel2.Visible = false;
+            myForm.AutoScroll = true;
+            fenetrePrincipale.panel1.Controls.Add(myForm);
+            myForm.Show();
         }
 
 
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void DashBoardButton_Click(object sender, EventArgs e)
+        {
+            fenetrePrincipale.panel1.Controls.Clear();
+            fenetrePrincipale.panel2.Visible = true;
         }
     }
 }

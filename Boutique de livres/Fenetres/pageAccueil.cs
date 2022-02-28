@@ -13,7 +13,7 @@ namespace Boutique_de_livres.Fenetres
 {
     public partial class pageAccueil : UserControl
     {
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
+        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
 
         private AdminPanel fenetrePrincipale;
         public pageAccueil(AdminPanel fenetre)
@@ -44,7 +44,7 @@ namespace Boutique_de_livres.Fenetres
 
             MySqlCommand commentaires = conn.CreateCommand();
 
-            commentaires.CommandText = "SELECT count(*) FROM commentaires WHERE verif = 0";
+            commentaires.CommandText = "CALL verif_commentaire()";
 
             MySqlDataReader comms = commentaires.ExecuteReader();
 
@@ -62,7 +62,7 @@ namespace Boutique_de_livres.Fenetres
 
             MySqlCommand livres = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
 
-            livres.CommandText = "SELECT idLivre, Titre FROM bibliotheque ORDER BY date_heure DESC LIMIT 5"; // Ecriture requête
+            livres.CommandText = "SELECT idLivre, Titre FROM livres ORDER BY date_heure DESC LIMIT 5"; // Ecriture requête
 
             // Récupération des données:
 

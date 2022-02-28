@@ -38,18 +38,18 @@ namespace Boutique_de_livres
             this.NomUtilisateur = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ClosePic = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.MenuAdmin.SuspendLayout();
             this.UserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClosePic)).BeginInit();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.PaleGreen;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(539, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -63,11 +63,12 @@ namespace Boutique_de_livres
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(363, 298);
+            this.panel1.Location = new System.Drawing.Point(281, 197);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(733, 303);
+            this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 3;
             // 
             // votreNom
@@ -88,7 +89,7 @@ namespace Boutique_de_livres
             this.MenuAdmin.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(238, 739);
+            this.MenuAdmin.Size = new System.Drawing.Size(238, 1041);
             this.MenuAdmin.TabIndex = 5;
             this.MenuAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuAdmin_Paint);
             // 
@@ -132,19 +133,12 @@ namespace Boutique_de_livres
             this.ClosePic.BackgroundImage = global::Boutique_de_livres.Properties.Resources.close;
             this.ClosePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClosePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("ClosePic.InitialImage")));
-            this.ClosePic.Location = new System.Drawing.Point(1392, 0);
+            this.ClosePic.Location = new System.Drawing.Point(1863, 1);
             this.ClosePic.Name = "ClosePic";
             this.ClosePic.Size = new System.Drawing.Size(41, 39);
             this.ClosePic.TabIndex = 6;
             this.ClosePic.TabStop = false;
             this.ClosePic.Click += new System.EventHandler(this.ClosePic_Click_1);
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(281, 197);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 0);
-            this.panel1.TabIndex = 3;
             // 
             // panel2
             // 
@@ -158,19 +152,17 @@ namespace Boutique_de_livres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Boutique_de_livres.Properties.Resources.Settings_Metal;
-            this.ClientSize = new System.Drawing.Size(1431, 739);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.ClosePic);
             this.Controls.Add(this.MenuAdmin);
             this.Controls.Add(this.votreNom);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = global::Boutique_de_livres.Properties.Resources.Settings_Metal;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

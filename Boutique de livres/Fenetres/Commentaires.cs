@@ -15,7 +15,7 @@ namespace Boutique_de_livres.Fenetres
     {
         private AdminPanel fenetrePrincipale;
 
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
+        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
         public Commentaires(AdminPanel fenetre)
         {
             InitializeComponent();

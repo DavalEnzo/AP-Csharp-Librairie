@@ -39,14 +39,17 @@ namespace Boutique_de_livres.Fenetres
             this.id = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.titrePage = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.permissions = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.CadetBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(71, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -144,15 +147,16 @@ namespace Boutique_de_livres.Fenetres
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label6
+            // titrePage
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(514, 20);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 44);
-            this.label6.TabIndex = 10;
+            this.titrePage.AutoSize = true;
+            this.titrePage.BackColor = System.Drawing.Color.CadetBlue;
+            this.titrePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titrePage.Location = new System.Drawing.Point(514, 20);
+            this.titrePage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titrePage.Name = "titrePage";
+            this.titrePage.Size = new System.Drawing.Size(0, 44);
+            this.titrePage.TabIndex = 10;
             // 
             // label7
             // 
@@ -175,6 +179,15 @@ namespace Boutique_de_livres.Fenetres
             this.permissions.TabIndex = 13;
             this.permissions.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.CadetBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(948, 80);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // ModifProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,7 +197,7 @@ namespace Boutique_de_livres.Fenetres
             this.ClientSize = new System.Drawing.Size(948, 527);
             this.Controls.Add(this.permissions);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.titrePage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.id);
@@ -195,6 +208,7 @@ namespace Boutique_de_livres.Fenetres
             this.Controls.Add(this.prenom);
             this.Controls.Add(this.email);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(959, 509);
             this.Name = "ModifProfil";
@@ -202,6 +216,7 @@ namespace Boutique_de_livres.Fenetres
             this.Text = "Modification Profil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifProfil_FormClosing);
             this.Load += new System.EventHandler(this.ModifProfil_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,8 +234,9 @@ namespace Boutique_de_livres.Fenetres
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label titrePage;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox permissions;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

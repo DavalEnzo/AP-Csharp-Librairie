@@ -14,7 +14,7 @@ namespace Boutique_de_livres.Fenetres
     public partial class detailsCommentaire : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
+        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
         public detailsCommentaire(string idComm, string contenu, string Utilisateur, string titre, string date_heure, string approuve)
         {
             InitializeComponent();

@@ -85,9 +85,9 @@ namespace Boutique_de_livres.Fenetres
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(372, 142);
+            this.pictureBox4.Location = new System.Drawing.Point(360, 142);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(256, 158);
+            this.pictureBox4.Size = new System.Drawing.Size(268, 158);
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
@@ -129,7 +129,7 @@ namespace Boutique_de_livres.Fenetres
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(63, 142);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 158);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -138,7 +138,7 @@ namespace Boutique_de_livres.Fenetres
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(245, 343);
+            this.label3.Location = new System.Drawing.Point(245, 313);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(194, 24);
             this.label3.TabIndex = 21;
@@ -148,7 +148,7 @@ namespace Boutique_de_livres.Fenetres
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(63, 336);
+            this.pictureBox6.Location = new System.Drawing.Point(63, 306);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(565, 158);
             this.pictureBox6.TabIndex = 20;
@@ -164,7 +164,7 @@ namespace Boutique_de_livres.Fenetres
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 370);
+            this.dataGridView1.Location = new System.Drawing.Point(75, 340);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(543, 107);

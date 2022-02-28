@@ -48,15 +48,15 @@ namespace Boutique_de_livres
             this.DashBoardButton.ForeColor = System.Drawing.Color.White;
             this.DashBoardButton.Image = global::Boutique_de_livres.Properties.Resources.abri;
             this.DashBoardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DashBoardButton.Location = new System.Drawing.Point(0, 697);
+            this.DashBoardButton.Location = new System.Drawing.Point(0, 514);
             this.DashBoardButton.Name = "DashBoardButton";
-            this.DashBoardButton.Size = new System.Drawing.Size(239, 42);
+            this.DashBoardButton.Size = new System.Drawing.Size(190, 42);
             this.DashBoardButton.TabIndex = 15;
             this.DashBoardButton.Text = "DashBoard";
             this.DashBoardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashBoardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.DashBoardButton.UseVisualStyleBackColor = true;
-
+            this.DashBoardButton.Click += new System.EventHandler(this.DashBoardButton_Click);
             // 
             // EditeursMenu
             // 
@@ -69,7 +69,7 @@ namespace Boutique_de_livres
             this.EditeursMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EditeursMenu.Location = new System.Drawing.Point(0, 410);
             this.EditeursMenu.Name = "EditeursMenu";
-            this.EditeursMenu.Size = new System.Drawing.Size(239, 42);
+            this.EditeursMenu.Size = new System.Drawing.Size(190, 42);
             this.EditeursMenu.TabIndex = 13;
             this.EditeursMenu.Text = "Editeurs";
             this.EditeursMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,7 +88,7 @@ namespace Boutique_de_livres
             this.StatMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatMenu.Location = new System.Drawing.Point(0, 368);
             this.StatMenu.Name = "StatMenu";
-            this.StatMenu.Size = new System.Drawing.Size(239, 42);
+            this.StatMenu.Size = new System.Drawing.Size(190, 42);
             this.StatMenu.TabIndex = 12;
             this.StatMenu.Text = "Statistiques";
             this.StatMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +107,7 @@ namespace Boutique_de_livres
             this.CommentairesMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CommentairesMenu.Location = new System.Drawing.Point(0, 326);
             this.CommentairesMenu.Name = "CommentairesMenu";
-            this.CommentairesMenu.Size = new System.Drawing.Size(239, 42);
+            this.CommentairesMenu.Size = new System.Drawing.Size(190, 42);
             this.CommentairesMenu.TabIndex = 11;
             this.CommentairesMenu.Text = "Commentaires";
             this.CommentairesMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,7 +126,7 @@ namespace Boutique_de_livres
             this.CommandesMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CommandesMenu.Location = new System.Drawing.Point(0, 284);
             this.CommandesMenu.Name = "CommandesMenu";
-            this.CommandesMenu.Size = new System.Drawing.Size(239, 42);
+            this.CommandesMenu.Size = new System.Drawing.Size(190, 42);
             this.CommandesMenu.TabIndex = 10;
             this.CommandesMenu.Text = "Commandes";
             this.CommandesMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,7 +145,7 @@ namespace Boutique_de_livres
             this.LivresMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LivresMenu.Location = new System.Drawing.Point(0, 242);
             this.LivresMenu.Name = "LivresMenu";
-            this.LivresMenu.Size = new System.Drawing.Size(239, 42);
+            this.LivresMenu.Size = new System.Drawing.Size(190, 42);
             this.LivresMenu.TabIndex = 9;
             this.LivresMenu.Text = "Livres";
             this.LivresMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,7 +165,7 @@ namespace Boutique_de_livres
             this.UtilisateurMenu.Location = new System.Drawing.Point(0, 200);
             this.UtilisateurMenu.Name = "UtilisateurMenu";
             this.UtilisateurMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UtilisateurMenu.Size = new System.Drawing.Size(239, 42);
+            this.UtilisateurMenu.Size = new System.Drawing.Size(190, 42);
             this.UtilisateurMenu.TabIndex = 8;
             this.UtilisateurMenu.Text = "Utilisateur";
             this.UtilisateurMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

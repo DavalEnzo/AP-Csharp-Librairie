@@ -23,6 +23,7 @@ namespace Boutique_de_livres.Fenetres
             nom.Text = Nom;
             email.Text = Email;
 
+
             if(verif == "1")
             {
                 permissions.Checked = true;
@@ -32,7 +33,7 @@ namespace Boutique_de_livres.Fenetres
         private void ModifProfil_Load(object sender, EventArgs e)
         {
 
-            label6.Text = prenom.Text + " " + nom.Text;
+            titrePage.Text = prenom.Text + " " + nom.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
