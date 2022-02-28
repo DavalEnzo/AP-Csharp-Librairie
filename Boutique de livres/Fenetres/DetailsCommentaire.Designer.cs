@@ -40,12 +40,15 @@ namespace Boutique_de_livres.Fenetres
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TitreFenetre
             // 
             this.TitreFenetre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TitreFenetre.AutoSize = true;
+            this.TitreFenetre.BackColor = System.Drawing.Color.Orange;
             this.TitreFenetre.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitreFenetre.Location = new System.Drawing.Point(138, 19);
             this.TitreFenetre.Name = "TitreFenetre";
@@ -124,6 +127,8 @@ namespace Boutique_de_livres.Fenetres
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.AutoSize = true;
             this.button1.Location = new System.Drawing.Point(90, 374);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 32);
@@ -134,6 +139,8 @@ namespace Boutique_de_livres.Fenetres
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.AutoSize = true;
             this.button2.Location = new System.Drawing.Point(306, 374);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 32);
@@ -144,6 +151,8 @@ namespace Boutique_de_livres.Fenetres
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.AutoSize = true;
             this.button3.Location = new System.Drawing.Point(525, 374);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 32);
@@ -156,11 +165,23 @@ namespace Boutique_de_livres.Fenetres
             // 
             this.id.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.id.AutoSize = true;
+            this.id.BackColor = System.Drawing.Color.Orange;
             this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.Location = new System.Drawing.Point(617, 19);
+            this.id.Location = new System.Drawing.Point(610, 19);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(0, 42);
             this.id.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Orange;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(803, 76);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // detailsCommentaire
             // 
@@ -179,9 +200,12 @@ namespace Boutique_de_livres.Fenetres
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.TitreFenetre);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "detailsCommentaire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Détail commentaire";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.detailsCommentaire_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +224,6 @@ namespace Boutique_de_livres.Fenetres
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label id;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

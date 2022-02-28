@@ -184,7 +184,6 @@ namespace Boutique_de_livres.Fenetres
             this.typeGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.typeGenre.Enabled = false;
             this.typeGenre.FormattingEnabled = true;
             this.typeGenre.Location = new System.Drawing.Point(257, 201);
             this.typeGenre.Name = "typeGenre";
@@ -201,7 +200,8 @@ namespace Boutique_de_livres.Fenetres
             this.genre.Name = "genre";
             this.genre.Size = new System.Drawing.Size(110, 21);
             this.genre.TabIndex = 15;
-            this.genre.Click += new System.EventHandler(this.genre_Click);
+            this.genre.DropDown += new System.EventHandler(this.genre_DropDown);
+            this.genre.SelectedIndexChanged += new System.EventHandler(this.genre_SelectedIndexChanged);
             // 
             // label6
             // 

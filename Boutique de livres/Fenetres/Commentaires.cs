@@ -26,7 +26,7 @@ namespace Boutique_de_livres.Fenetres
 
             MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
 
-            command.CommandText = "SELECT idCommentaire, contenu, CONCAT(CONCAT(utilisateurs.prenom, ' '), utilisateurs.nom) AS utilisateur, bibliotheque.Titre, commentaires.date_heure, verif FROM `commentaires` LEFT JOIN bibliotheque USING (idLivre) LEFT JOIN utilisateurs USING (idUtilisateur) WHERE verif = 0"; // Ecriture requête
+            command.CommandText = "SELECT idCommentaire, contenu, CONCAT(CONCAT(utilisateurs.prenom, ' '), utilisateurs.nom) AS utilisateur, livres.Titre, commentaires.date_heure, verif FROM `commentaires` LEFT JOIN livres USING (idLivre) LEFT JOIN utilisateurs USING (idUtilisateur) WHERE verif = 0"; // Ecriture requête
 
             // Récupération des données:
 

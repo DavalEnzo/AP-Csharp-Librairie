@@ -92,7 +92,7 @@ namespace Boutique_de_livres.Fenetres
                 string genre = (Convert.ToString(selectedRow.Cells["Genre"].Value));
                 string editeur = (Convert.ToString(selectedRow.Cells["Editeur"].Value));
 
-                ModifLivre modifL = new ModifLivre(id, titre, prix, auteur, dateSortie, typeGenre, genre, editeur);
+                ModifLivre modifL = new ModifLivre(id, titre, prix, dateSortie, typeGenre, genre, editeur);
                 fenetrePrincipale.Hide();
                 modifL.Show();
             }

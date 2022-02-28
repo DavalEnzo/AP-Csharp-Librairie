@@ -85,5 +85,10 @@ namespace Boutique_de_livres.Fenetres
             }
             conn.Close();
         }
+
+        private void detailsCommentaire_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AdminPanel.Show();
+        }
     }
 }

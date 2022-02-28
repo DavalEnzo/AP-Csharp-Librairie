@@ -30,26 +30,30 @@ namespace Boutique_de_livres.Fenetres
 
             titrePage.Text = Id;
 
+            genre.Text = Genre;
+
+            typeGenre.Text = TypeGenre;
+
+            typeGenre.SelectedIndex = typeGenre.Items.IndexOf(typeGenre);
+
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
 
-            command.CommandText = "SELECT * from typeGenre LEFT JOIN genres USING(idGenre)";
+            command.Parameters.AddWithValue("@nomGenre", genre.Text); // Ajout des VALUES de la requête
+
+            command.CommandText = "SELECT libelle from typegenre LEFT JOIN genres USING(idGenre) WHERE nomGenre = @nomGenre";
 
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                string nomTypeGenre = reader.GetString(1);
-                typeGenre.Items.Add(nomTypeGenre);              
-                
-                string nomGenre = reader.GetString(2);
-                genre.Items.Add(nomTypeGenre);
+                string nomTypeGenre = reader.GetString(0);
+                typeGenre.Items.Add(nomTypeGenre);
+                typeGenre.SelectedIndex = 0;
             }
 
             conn.Close();
-
-            typeGenre.SelectedIndex = typeGenre.Items.IndexOf(typeGenre);
         }
 
         private void ModifLivre_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,15 +69,20 @@ namespace Boutique_de_livres.Fenetres
 
             command.Parameters.AddWithValue("@libelle", typeGenre.Text);
 
-            command.CommandText = "SELECT * from typeGenre WHERE libelle = @libelle";
+            command.Parameters.AddWithValue("@nomGenre", genre.Text);
+
+            command.CommandText = "SELECT * from typeGenre LEFT JOIN genres USING(idGenre) WHERE libelle = @libelle AND genres.nomGenre = @nomGenre";
 
             MySqlDataReader reader = command.ExecuteReader();
 
             int idTypeGenre = 0;
 
+            int idGenre = 0;
+
             while (reader.Read())
             {
-                idTypeGenre = reader.GetInt32(0);
+                idGenre = reader.GetInt32(0);
+                idTypeGenre = reader.GetInt32(1);
             }
 
             conn.Close();
@@ -92,7 +101,9 @@ namespace Boutique_de_livres.Fenetres
 
             insert.Parameters.AddWithValue("@idtypeGenre", idTypeGenre); // Ajout des VALUES de la requête
 
-            insert.CommandText = "UPDATE livres SET Titre=@titre, Prix=@prix, date_sortie=@dateSortie, idtypeGenre = @idtypeGenre WHERE idLivre = @id";
+            insert.Parameters.AddWithValue("@idGenre", idGenre); // Ajout des VALUES de la requête
+
+            insert.CommandText = "UPDATE livres SET Titre=@titre, Prix=@prix, date_sortie=@dateSortie, idtypeGenre = @idtypeGenre, idGenre = @idGenre WHERE idLivre = @id";
 
             if (insert.ExecuteNonQuery() > 0) // Si requête réussie
             {
@@ -102,25 +113,50 @@ namespace Boutique_de_livres.Fenetres
             }
         }
 
-        private void genre_Click(object sender, EventArgs e)
-        {
+        private void genre_DropDown(object sender, EventArgs e)
+        {            
+            genre.Items.Clear();
+
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
 
-            command.CommandText = "SELECT * from genres WHERE ";
+            command.CommandText = "SELECT nomGenre from genres";
 
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                string nomGenre = reader.GetString(1);
+                string nomGenre = reader.GetString(0);
                 genre.Items.Add(nomGenre);
             }
 
             conn.Close();
 
-            //typeGenre.SelectedIndex = typeGenre.Items.IndexOf(Genre);
+        }
+
+        private void genre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            typeGenre.Items.Clear();
+
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand();
+
+            command.Parameters.AddWithValue("@nomGenre", genre.Text); // Ajout des VALUES de la requête
+
+            command.CommandText = "SELECT libelle from typegenre LEFT JOIN genres USING(idGenre) WHERE nomGenre = @nomGenre";
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string nomTypeGenre = reader.GetString(0);
+                typeGenre.Items.Add(nomTypeGenre);
+                typeGenre.SelectedIndex = 0;
+            }
+
+            conn.Close();
         }
     }
 }
