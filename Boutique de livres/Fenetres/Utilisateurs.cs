@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 
 namespace Boutique_de_livres.Fenetres
 {
@@ -25,39 +27,23 @@ namespace Boutique_de_livres.Fenetres
             selectSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             selectSearch.SelectedIndex = 0;
 
-            conn.Open();
+            List<Utilisateur> listeUtilisateurs = new dtoUtilisateur().getAllUsers();
 
-            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+            dataGridView1.ColumnCount = 5;
+            dataGridView1.Columns[0].Name = "id Utilisateur";
+            dataGridView1.Columns[2].Name = "Nom";
+            dataGridView1.Columns[1].Name = "Prénom";
+            dataGridView1.Columns[3].Name = "Email";
+            dataGridView1.Columns[4].Name = "Admin";
 
-            command.CommandText = "SELECT * FROM utilisateurs"; // Ecriture requête
-
-            // Récupération des données:
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach (Utilisateur utilisateur in listeUtilisateurs)
             {
 
-                // Si la colonne est un string :  (si vous récupérez plusieurs résultats dans votre requête, incrémenter le 0 à 1, puis 2...)
-                string idUtilisateur = reader.GetString(0);
-                string prénom = reader.GetString(1);
-                string nom = reader.GetString(2);
-                string email = reader.GetString(3);
-                string verif = reader.GetString(6);
+                dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Nom, utilisateur.Prenom, utilisateur.Email, utilisateur.IdPermission);
+            }
 
-                dataGridView1.ColumnCount = 5;
-                dataGridView1.Columns[0].Name = "id Utilisateur";
-                dataGridView1.Columns[2].Name = "Nom";
-                dataGridView1.Columns[1].Name = "Prénom";
-                dataGridView1.Columns[3].Name = "Email";
-                dataGridView1.Columns[4].Name = "Admin";
 
-                dataGridView1.Rows.Add(idUtilisateur, nom, prénom, email, verif);
 
-                // Si nullable, faire un GetValue au lieu de GetString sinon cause bug
-            };
-
-            conn.Close(); // Fermeture de la connexion
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -99,14 +85,13 @@ namespace Boutique_de_livres.Fenetres
 
                             int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
                             DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                            string cellValue = Convert.ToString(selectedRow.Cells["id Utilisateur"].Value);
+                            int cellValue = Convert.ToInt32(selectedRow.Cells["id Utilisateur"].Value);
 
-                            // Add the parameter to the command collection
-                            command.Parameters.AddWithValue("@idUtilisateur", cellValue);
+                        dtoUtilisateur user = new dtoUtilisateur();
 
-                            command.CommandText = "DELETE FROM utilisateurs WHERE idUtilisateur = @idUtilisateur"; // Ecriture requête
+                        user.deleteUser(cellValue);
 
-                            if (command.ExecuteNonQuery() > 0) // Si requête réussie
+                            if (user.deleteUser(cellValue) == true) // Si requête réussie
                             {
 
                             dataGridView1.Rows.RemoveAt(selectedrowindex);

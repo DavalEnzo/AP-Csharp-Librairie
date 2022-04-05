@@ -75,26 +75,23 @@ using BCrypt.Net;
 
                 int idPermission = reader.GetInt32(3);
 
+
                 if (idPermission == 1)
                 {
 
                     if (!BCrypt.Verify(Mdp.Text, mdpCrypte))
                     {
+                        emailValide = true;
                         MessageBox.Show("Le mot de passe est incorrect");
                     }
                     else if (BCrypt.Verify(Mdp.Text, mdpCrypte))
                     {
+                        emailValide = true;
                         MessageBox.Show("Bienvenue" + " " + prénom + " " + nom + " !");
                         AdminPanel adminPanel = new AdminPanel();
 
                         adminPanel.Show();
                         this.Hide();
-                    }
-                    emailValide = true;
-
-                    if (emailValide == false)
-                    {
-                        MessageBox.Show("Aucun compte avec cette adresse mail n'a été trouvé ou rien n'a été entré dans le champ mail");
                     }
                 }
                 else
@@ -102,7 +99,13 @@ using BCrypt.Net;
                     MessageBox.Show("Vous n'êtes pas autorisé à utiliser cette application");
                 }
             }
-        conn.Close();
+
+            if (emailValide == false)
+            {
+                MessageBox.Show("Aucun compte avec cette adresse mail n'a été trouvé ou rien n'a été entré dans le champ mail");
+            }
+
+            conn.Close();
         }
 
 
