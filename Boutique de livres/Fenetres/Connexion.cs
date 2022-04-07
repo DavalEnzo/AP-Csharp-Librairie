@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 using MySql.Data.MySqlClient; // Ne pas oublier d'ajouter mysqldata.dll en ref et de mettre le using
 
 namespace Boutique_de_livres
 {
-using BCrypt.Net;
     public partial class Connexion : Form
     {
         MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd="); // Données de connexion à la BDD
@@ -50,62 +51,37 @@ using BCrypt.Net;
             string email = Mail.Text;
             string mdp = Mdp.Text;
 
-            conn.Open();
+            dtoUtilisateur connexion = new dtoUtilisateur();
 
-            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+            connexion.verifconnexion(email, mdp);
 
-            command.Parameters.AddWithValue("@email", email); // Ajout des VALUES de la requête
-
-            command.Parameters.AddWithValue("@mdp", mdp);
-
-            command.CommandText = "SELECT nom,prenom,mdp,idPermission FROM utilisateurs WHERE email = @email"; // Ecriture requête
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            bool emailValide = false;
-
-            while (reader.Read())
+            if (connexion.verifconnexion(email, mdp) == 0)
             {
-                // Si la colonne est un string :  (si vous récupérez plusieurs résultats dans votre requête, incrémenter le 0 à 1, puis 2...)
-                string nom = reader.GetString(0);
 
-                string prénom = reader.GetString(1);
+                List<Utilisateur> liste = connexion.connexion(email);
 
-                string mdpCrypte = reader.GetString(2);
-
-                int idPermission = reader.GetInt32(3);
-
-
-                if (idPermission == 1)
+                foreach (Utilisateur utilisateur in liste)
                 {
 
-                    if (!BCrypt.Verify(Mdp.Text, mdpCrypte))
-                    {
-                        emailValide = true;
-                        MessageBox.Show("Le mot de passe est incorrect");
-                    }
-                    else if (BCrypt.Verify(Mdp.Text, mdpCrypte))
-                    {
-                        emailValide = true;
-                        MessageBox.Show("Bienvenue" + " " + prénom + " " + nom + " !");
-                        AdminPanel adminPanel = new AdminPanel();
+                    MessageBox.Show("Bienvenue" + " " + utilisateur.Prenom + " " + utilisateur.Nom + " !");
 
-                        adminPanel.Show();
-                        this.Hide();
-                    }
                 }
-                else
-                {
-                    MessageBox.Show("Vous n'êtes pas autorisé à utiliser cette application");
-                }
+                AdminPanel adminPanel = new AdminPanel();
+
+                adminPanel.Show();
+                this.Hide();
             }
-
-            if (emailValide == false)
+            else if(connexion.verifconnexion(email, mdp) == 1)
+            {
+                MessageBox.Show("Le mot de passe est incorrect");
+            }else if(connexion.verifconnexion(email, mdp) == 2)
+            {
+                
+            }else if(connexion.verifconnexion(email, mdp) == -1)
             {
                 MessageBox.Show("Aucun compte avec cette adresse mail n'a été trouvé ou rien n'a été entré dans le champ mail");
             }
 
-            conn.Close();
         }
 
 

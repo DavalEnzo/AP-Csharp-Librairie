@@ -47,7 +47,9 @@ namespace Boutique_de_livres.Modeles
                     _email = reader.GetString(3);
                     _mdp = reader.GetString(4);
                     _idPermission = reader.GetInt32(5);
-                    _active = reader.GetInt32(6);              
+                    _active = reader.GetInt32(6);
+
+                    ;
                 };
             }
         }
