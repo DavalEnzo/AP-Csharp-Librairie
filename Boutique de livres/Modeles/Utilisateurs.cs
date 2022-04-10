@@ -5,7 +5,7 @@ using Boutique_de_livres.dtos;
 
 namespace Boutique_de_livres.Modeles
 {
-    public class Utilisateur : Modele
+    public class Utilisateurs : Modele
     {
         private int _idUtilisateur;
         public int IdUtilisateur { get { return _idUtilisateur; } set { _idUtilisateur = value; } }
@@ -28,7 +28,7 @@ namespace Boutique_de_livres.Modeles
         private int _active;
         public int active { get { return _active; } set { _active = value; } }
 
-        public Utilisateur(int idUtilisateur = 0)
+        public Utilisateurs(int idUtilisateur = 0)
         {
             if(idUtilisateur > 0)
             {
@@ -48,13 +48,13 @@ namespace Boutique_de_livres.Modeles
                     _mdp = reader.GetString(4);
                     _idPermission = reader.GetInt32(5);
                     _active = reader.GetInt32(6);
-
-                    ;
                 };
+
+                conn.Close();
             }
         }
 
-        public Utilisateur(int idUtilisateur, string prenom, string nom, string email, string mdp, int idPermisssion, int active)
+        public Utilisateurs(int idUtilisateur, string prenom, string nom, string email, string mdp, int idPermisssion, int active)
         {
             this.IdUtilisateur = idUtilisateur;
             this.Email = email;

@@ -12,9 +12,9 @@ using BCrypt.Net;
     public class dtoUtilisateur : Modele
     {
 
-        protected List<Utilisateur> listeUtilisateur = new List<Utilisateur>();
+        protected List<Utilisateurs> listeUtilisateur = new List<Utilisateurs>();
 
-        public List<Utilisateur> getAllUsers()
+        public List<Utilisateurs> getAllUsers()
         {
             conn.Open();
 
@@ -28,7 +28,7 @@ using BCrypt.Net;
 
             while (reader.Read())
             {
-                Utilisateur utilisateur = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6));
+                Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6));
                 
                 listeUtilisateur.Add(utilisateur);
             };
@@ -94,7 +94,7 @@ using BCrypt.Net;
 
         }
 
-        public List<Utilisateur> connexion(string email)
+        public List<Utilisateurs> connexion(string email)
         {
             conn.Open();
 
@@ -110,7 +110,7 @@ using BCrypt.Net;
             {
                 // Si la colonne est un string :  (si vous récupérez plusieurs résultats dans votre requête, incrémenter le 0 à 1, puis 2...)
 
-                Utilisateur utilisateur = new Utilisateur(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), email, null, reader.GetInt32(3), reader.GetInt32(4));
+                Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), email, null, reader.GetInt32(3), reader.GetInt32(4));
 
                 listeUtilisateur.Add(utilisateur);
             }
@@ -118,6 +118,27 @@ using BCrypt.Net;
             conn.Close();
             return listeUtilisateur;
 
+        }
+
+        public bool inscription(string nom, string prenom, string mail, string mdp)
+        {
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+            command.Parameters.AddWithValue("@Prenom", prenom); // Ajout des VALUES de la requête
+
+            command.Parameters.AddWithValue("@Nom", nom);
+
+            command.Parameters.AddWithValue("@Mail", mail);
+
+            command.Parameters.AddWithValue("@Mdp", mdp);
+
+            command.CommandText = "INSERT INTO utilisateurs (nom, prenom, email, mdp) VALUES (@Nom, @Prenom, @Mail, @Mdp)"; // Ecriture requête
+
+            conn.Close() ;
+
+            return true;
         }
 
 

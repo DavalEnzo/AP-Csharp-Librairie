@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
-using MySql.Data.MySqlClient; // Ne pas oublier d'ajouter mysqldata.dll en ref et de mettre le using
 
 namespace Boutique_de_livres
 {
     public partial class Connexion : Form
     {
-        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd="); // Données de connexion à la BDD
         public Connexion()
         {
             InitializeComponent();
@@ -58,9 +56,9 @@ namespace Boutique_de_livres
             if (connexion.verifconnexion(email, mdp) == 0)
             {
 
-                List<Utilisateur> liste = connexion.connexion(email);
+                List<Utilisateurs> liste = connexion.connexion(email);
 
-                foreach (Utilisateur utilisateur in liste)
+                foreach (Utilisateurs utilisateur in liste)
                 {
 
                     MessageBox.Show("Bienvenue" + " " + utilisateur.Prenom + " " + utilisateur.Nom + " !");

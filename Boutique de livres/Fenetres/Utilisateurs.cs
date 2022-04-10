@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
 
@@ -16,7 +15,6 @@ namespace Boutique_de_livres.Fenetres
     public partial class Utilisateurs : UserControl
     {
         private AdminPanel fenetrePrincipale;
-        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
 
         public Utilisateurs(AdminPanel fenetre)
         {
@@ -27,7 +25,7 @@ namespace Boutique_de_livres.Fenetres
             selectSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             selectSearch.SelectedIndex = 0;
 
-            List<Utilisateur> listeUtilisateurs = new dtoUtilisateur().getAllUsers();
+            List<Modeles.Utilisateurs> listeUtilisateurs = new dtoUtilisateur().getAllUsers();
 
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].Name = "id Utilisateur";
@@ -36,7 +34,7 @@ namespace Boutique_de_livres.Fenetres
             dataGridView1.Columns[3].Name = "Email";
             dataGridView1.Columns[4].Name = "Admin";
 
-            foreach (Utilisateur utilisateur in listeUtilisateurs)
+            foreach (Modeles.Utilisateurs utilisateur in listeUtilisateurs)
             {
 
                 dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Nom, utilisateur.Prenom, utilisateur.Email, utilisateur.IdPermission);
@@ -76,10 +74,6 @@ namespace Boutique_de_livres.Fenetres
                 }
                 else
                 {
-                    MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-                        conn.Open();
-
                         if (dataGridView1.CurrentCell.RowIndex > 0)
                         {
 
@@ -103,7 +97,6 @@ namespace Boutique_de_livres.Fenetres
                                 MessageBox.Show("Erreur lors de le suppression !");
                             }
                         }
-                        conn.Close();
                 }
             }
 

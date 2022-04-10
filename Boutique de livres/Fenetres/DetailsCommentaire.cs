@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 
 namespace Boutique_de_livres.Fenetres
 {
@@ -35,18 +37,14 @@ namespace Boutique_de_livres.Fenetres
             DialogResult res = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce commentaire ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (res == DialogResult.OK)
             {
-                string idCommentaire = id.Text;
 
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+                int idCommentaire = Convert.ToInt32(id.Text);
 
-                conn.Open();
+                dtoCommentaire dtoCommentaire = new dtoCommentaire();
 
-                // Add the parameter to the command collection
-                command.Parameters.AddWithValue("@idCommentaire", idCommentaire);
+                dtoCommentaire.deleteCommentaire(idCommentaire);
 
-                command.CommandText = "DELETE FROM commentaires WHERE idCommentaire = @idCommentaire"; // Ecriture requête
-
-                if (command.ExecuteNonQuery() > 0) // Si requête réussie
+                if (dtoCommentaire.deleteCommentaire(idCommentaire) == true) // Si requête réussie
                 {
                     MessageBox.Show("Suppression effectuée");
                     Close();
@@ -57,23 +55,17 @@ namespace Boutique_de_livres.Fenetres
                     MessageBox.Show("Erreur lors de le suppression !");
                 }
             }
-            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string idCommentaire = id.Text;
+            int idCommentaire = Convert.ToInt32(id.Text);
 
-            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+            dtoCommentaire commentaire = new dtoCommentaire();
 
-            conn.Open();
+            commentaire.approveCommentaire(idCommentaire);
 
-            // Add the parameter to the command collection
-            command.Parameters.AddWithValue("@idCommentaire", idCommentaire);
-
-            command.CommandText = "UPDATE commentaires SET verif = 1 WHERE idCommentaire = @idCommentaire"; // Ecriture requête
-
-            if (command.ExecuteNonQuery() > 0) // Si requête réussie
+            if (commentaire.approveCommentaire(idCommentaire) == true) // Si requête réussie
             {
                 MessageBox.Show("Commentaire approuvé !");
                 Close();
@@ -83,7 +75,6 @@ namespace Boutique_de_livres.Fenetres
             {
                 MessageBox.Show("Erreur lors de l'approbation du commentaire");
             }
-            conn.Close();
         }
 
         private void detailsCommentaire_FormClosing(object sender, FormClosingEventArgs e)
