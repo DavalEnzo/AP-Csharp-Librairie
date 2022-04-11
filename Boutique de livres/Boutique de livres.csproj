@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dtos\dtoLivre.cs" />
     <Compile Include="dtos\dtoCommentaire.cs" />
     <Compile Include="dtos\dtoUtilisateur.cs" />
     <Compile Include="Fenetres\Connexion.cs">
@@ -136,6 +137,7 @@
     <Compile Include="Fenetres\Livres.Designer.cs">
       <DependentUpon>Livres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modeles\Livres.cs" />
     <Compile Include="Modeles\Commentaires.cs" />
     <Compile Include="Modeles\Modele.cs" />
     <Compile Include="Modeles\Utilisateurs.cs" />

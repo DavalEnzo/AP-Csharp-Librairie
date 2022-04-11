@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
@@ -36,24 +38,13 @@ namespace Boutique_de_livres.Fenetres
 
             typeGenre.SelectedIndex = typeGenre.Items.IndexOf(typeGenre);
 
-            conn.Open();
+            List<Modeles.Livres> listeTypeGenre = new dtoLivre().selectTypeGenre(genre.Text);
 
-            MySqlCommand command = conn.CreateCommand();
-
-            command.Parameters.AddWithValue("@nomGenre", genre.Text); // Ajout des VALUES de la requête
-
-            command.CommandText = "SELECT libelle from typegenre LEFT JOIN genres USING(idGenre) WHERE nomGenre = @nomGenre";
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach(Modeles.Livres typeGenreList in listeTypeGenre)
             {
-                string nomTypeGenre = reader.GetString(0);
-                typeGenre.Items.Add(nomTypeGenre);
+                typeGenre.Items.Add(typeGenreList.TypeGenre);
                 typeGenre.SelectedIndex = 0;
             }
-
-            conn.Close();
         }
 
         private void ModifLivre_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,53 +54,19 @@ namespace Boutique_de_livres.Fenetres
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            dtoLivre livre = new dtoLivre();
 
-            MySqlCommand command = conn.CreateCommand();
+            livre.updateLivre(titrePage.Text, titre.Text, float.Parse(prix.Text), dateSortie.Text, typeGenre.Text, genre.Text);
 
-            command.Parameters.AddWithValue("@libelle", typeGenre.Text);
-
-            command.Parameters.AddWithValue("@nomGenre", genre.Text);
-
-            command.CommandText = "SELECT * from typeGenre LEFT JOIN genres USING(idGenre) WHERE libelle = @libelle AND genres.nomGenre = @nomGenre";
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            int idTypeGenre = 0;
-
-            int idGenre = 0;
-
-            while (reader.Read())
-            {
-                idGenre = reader.GetInt32(0);
-                idTypeGenre = reader.GetInt32(1);
-            }
-
-            conn.Close();
-
-            conn.Open();
-
-            MySqlCommand insert = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-            insert.Parameters.AddWithValue("@id", titrePage.Text);
-
-            insert.Parameters.AddWithValue("@titre", titre.Text);
-
-            insert.Parameters.AddWithValue("@prix", prix.Text);
-
-            insert.Parameters.AddWithValue("@dateSortie", dateSortie.Text); // Ajout des VALUES de la requête
-
-            insert.Parameters.AddWithValue("@idtypeGenre", idTypeGenre); // Ajout des VALUES de la requête
-
-            insert.Parameters.AddWithValue("@idGenre", idGenre); // Ajout des VALUES de la requête
-
-            insert.CommandText = "UPDATE livres SET Titre=@titre, Prix=@prix, date_sortie=@dateSortie, idtypeGenre = @idtypeGenre, idGenre = @idGenre WHERE idLivre = @id";
-
-            if (insert.ExecuteNonQuery() > 0) // Si requête réussie
+            if (livre.updateLivre(titrePage.Text, titre.Text, float.Parse(prix.Text), dateSortie.Text, typeGenre.Text, genre.Text) == true) // Si requête réussie
             {
                 MessageBox.Show("Modification effectuée !");
                 this.Close();
                 AdminPanel.Show();
+            }
+            else
+            {
+                MessageBox.Show("Le livre n'a pas pu être modifié. Veuillez contacter un administrateur système");
             }
         }
 
@@ -117,20 +74,12 @@ namespace Boutique_de_livres.Fenetres
         {            
             genre.Items.Clear();
 
-            conn.Open();
+            List<Modeles.Livres> listeGenre = new dtoLivre().selectAllGenres();
 
-            MySqlCommand command = conn.CreateCommand();
-
-            command.CommandText = "SELECT nomGenre from genres";
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach (Modeles.Livres list in listeGenre)
             {
-                string nomGenre = reader.GetString(0);
-                genre.Items.Add(nomGenre);
+                genre.Items.Add(list.Genre);
             }
-
             conn.Close();
 
         }
@@ -139,23 +88,13 @@ namespace Boutique_de_livres.Fenetres
         {
             typeGenre.Items.Clear();
 
-            conn.Open();
+            List<Modeles.Livres> listeTypeGenre = new dtoLivre().getNewTypeGenreFromGenre(genre.Text);
 
-            MySqlCommand command = conn.CreateCommand();
-
-            command.Parameters.AddWithValue("@nomGenre", genre.Text); // Ajout des VALUES de la requête
-
-            command.CommandText = "SELECT libelle from typegenre LEFT JOIN genres USING(idGenre) WHERE nomGenre = @nomGenre";
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach (Modeles.Livres list in listeTypeGenre)
             {
-                string nomTypeGenre = reader.GetString(0);
-                typeGenre.Items.Add(nomTypeGenre);
+                typeGenre.Items.Add(list.TypeGenre);
                 typeGenre.SelectedIndex = 0;
             }
-
             conn.Close();
         }
     }
