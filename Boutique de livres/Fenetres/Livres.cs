@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
 
@@ -17,7 +16,6 @@ namespace Boutique_de_livres.Fenetres
     { 
 
         private AdminPanel fenetrePrincipale;
-        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
         public Livres(AdminPanel fenetre)
         {
             InitializeComponent();
@@ -47,7 +45,6 @@ namespace Boutique_de_livres.Fenetres
                 dataGridView1.Rows.Add(livres.IdLivre, livres.Titre, livres.Auteur, livres.Prix, livres.Date_sortie, livres.TypeGenre, livres.Genre, livres.Editeur);
             };
 
-            conn.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -92,7 +89,6 @@ namespace Boutique_de_livres.Fenetres
 
         private void searchName_TextChanged_1(object sender, EventArgs e)
         {
-                conn.Open();
 
                 if (selectSearch.Text == "Titre")
                 {
@@ -159,7 +155,6 @@ namespace Boutique_de_livres.Fenetres
                         dataGridView1.Rows.Add(livres.IdLivre, livres.Titre, livres.Auteur, livres.Prix, livres.Date_sortie, livres.TypeGenre, livres.Genre, livres.Editeur);
                     }
                 }
-                conn.Close();
         }
     }
 }

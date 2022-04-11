@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
-using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
 {
     public partial class ModifProfil : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        MySqlConnection conn = new MySqlConnection("database=livres; server=localhost; user id = root; pwd=");
         public ModifProfil(string identifiant, string Prenom, string Nom, string Email, string verif)
         {
             InitializeComponent();
@@ -69,7 +67,6 @@ namespace Boutique_de_livres.Fenetres
                     MessageBox.Show("Il y a eu un problème lors de la modification de l'utilisateur, veuillez contacter une administrateur");
                 }
 
-                conn.Close();
             }
             else
             {

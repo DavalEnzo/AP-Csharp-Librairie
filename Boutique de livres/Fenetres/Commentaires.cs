@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
-using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
 {

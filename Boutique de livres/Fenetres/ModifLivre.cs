@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
 using Boutique_de_livres.Modeles;
-using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
 {
     public partial class ModifLivre : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
         public ModifLivre(string Id, string Titre, string Prix, DateTime DateSortie, string TypeGenre, string Genre, string Editeur)
         {
             InitializeComponent();
@@ -80,7 +78,6 @@ namespace Boutique_de_livres.Fenetres
             {
                 genre.Items.Add(list.Genre);
             }
-            conn.Close();
 
         }
 
@@ -95,7 +92,6 @@ namespace Boutique_de_livres.Fenetres
                 typeGenre.Items.Add(list.TypeGenre);
                 typeGenre.SelectedIndex = 0;
             }
-            conn.Close();
         }
     }
 }
