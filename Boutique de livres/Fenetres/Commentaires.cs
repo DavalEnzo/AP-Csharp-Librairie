@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
@@ -15,48 +17,28 @@ namespace Boutique_de_livres.Fenetres
     {
         private AdminPanel fenetrePrincipale;
 
-        MySqlConnection conn = new MySqlConnection("database=bibliotheque; server=localhost; user id = root; pwd=");
         public Commentaires(AdminPanel fenetre)
         {
             InitializeComponent();
 
             fenetrePrincipale = fenetre;
 
-            conn.Open();
+            dataGridView1.ColumnCount = 6;
+            dataGridView1.Columns[0].Name = "id Commentaire";
+            dataGridView1.Columns[1].Name = "Contenu";
+            dataGridView1.Columns[2].Name = "Utilisateur";
+            dataGridView1.Columns[3].Name = "Titre du livre";
+            dataGridView1.Columns[4].Name = "Date et heure de publication";
+            dataGridView1.Columns[5].Name = "Approuvé ?";
 
-            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+            List<Modeles.Commentaires> listeCommentaires = new dtoCommentaire().getAllCommentaires();
 
-            command.CommandText = "SELECT idCommentaire, contenu, CONCAT(CONCAT(utilisateurs.prenom, ' '), utilisateurs.nom) AS utilisateur, livres.Titre, commentaires.date_heure, verif FROM `commentaires` LEFT JOIN livres USING (idLivre) LEFT JOIN utilisateurs USING (idUtilisateur) WHERE verif = 0"; // Ecriture requête
-
-            // Récupération des données:
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach (Modeles.Commentaires commentaires in listeCommentaires)
             {
 
-                // Si la colonne est un string :  (si vous récupérez plusieurs résultats dans votre requête, incrémenter le 0 à 1, puis 2...)
-                string idCommentaire = reader.GetString(0);
-                string contenu  = reader.GetString(1);
-                string utilisateur = reader.GetString(2);
-                string titre = reader.GetString(3);
-                string date_publication = reader.GetString(4);
-                string approuve = reader.GetString(5);
+                dataGridView1.Rows.Add(commentaires.IdCommentaire, commentaires.Contenu, commentaires.utilisateur,commentaires.titreLivre, commentaires.Date_heure, commentaires.verif);
+            }
 
-                dataGridView1.ColumnCount = 6;
-                dataGridView1.Columns[0].Name = "id Commentaire";
-                dataGridView1.Columns[1].Name = "Contenu";
-                dataGridView1.Columns[2].Name = "Utilisateur";
-                dataGridView1.Columns[3].Name = "Titre du livre";
-                dataGridView1.Columns[4].Name = "Date et heure de publication";
-                dataGridView1.Columns[5].Name = "Approuvé ?";
-
-                dataGridView1.Rows.Add(idCommentaire, contenu, utilisateur, titre, date_publication, approuve);
-
-                // Si nullable, faire un GetValue au lieu de GetString sinon cause bug
-            };
-
-            conn.Close(); // Fermeture de la connexion
         }
 
         private void button1_Click(object sender, EventArgs e)

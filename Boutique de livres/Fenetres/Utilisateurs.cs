@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
-using Boutique_de_livres.Modeles;
 
 namespace Boutique_de_livres.Fenetres
 {
@@ -74,29 +73,29 @@ namespace Boutique_de_livres.Fenetres
                 }
                 else
                 {
-                        if (dataGridView1.CurrentCell.RowIndex > 0)
-                        {
+                    if (dataGridView1.CurrentCell.RowIndex > 0)
+                    {
 
-                            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                            int cellValue = Convert.ToInt32(selectedRow.Cells["id Utilisateur"].Value);
+                        int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                        int cellValue = Convert.ToInt32(selectedRow.Cells["id Utilisateur"].Value);
 
                         dtoUtilisateur user = new dtoUtilisateur();
 
                         user.deleteUser(cellValue);
 
-                            if (user.deleteUser(cellValue) == true) // Si requête réussie
-                            {
+                        if (user.deleteUser(cellValue) == true) // Si requête réussie
+                        {
 
                             dataGridView1.Rows.RemoveAt(selectedrowindex);
 
                             MessageBox.Show("Suppression effectuée");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Erreur lors de le suppression !");
-                            }
                         }
+                        else
+                        {
+                            MessageBox.Show("Erreur lors de le suppression !");
+                        }
+                    }
                 }
             }
 
@@ -132,118 +131,67 @@ namespace Boutique_de_livres.Fenetres
 
         private void searchName_TextChanged(object sender, EventArgs e)
         {
-            conn.Open();
 
-            if(selectSearch.Text == "Prénom")
+            if (selectSearch.Text == "Prénom")
             {
 
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
 
-                command.Parameters.AddWithValue("@prenom", searchName.Text+"%");
-
-                command.CommandText = "SELECT * FROM utilisateurs WHERE prenom LIKE @prenom"; // Ecriture requête
+                List<Modeles.Utilisateurs> listeUtilisateurs = new dtoUtilisateur().rechercheUtilisateur(selectSearch.Text, searchName.Text);
 
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
 
-                // Récupération des données:
+                foreach (Modeles.Utilisateurs utilisateur in listeUtilisateurs)
+                {
 
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while(reader.Read()){
-                    string idUtilisateur = reader.GetString(0);
-                    string nom = reader.GetString(1);
-                    string prénom = reader.GetString(2);
-                    string email = reader.GetString(3);
-                    string verif = reader.GetString(6);
-
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
+                    dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Prenom, utilisateur.Nom, utilisateur.Email, utilisateur.active);
                 }
-                
+
             }
+
             else if(selectSearch.Text == "Identifiant")
             {
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-                command.Parameters.AddWithValue("@id", searchName.Text + "%");
-
-                command.CommandText = "SELECT * FROM utilisateurs WHERE idUtilisateur LIKE @id"; // Ecriture requête
+                List<Modeles.Utilisateurs> listeUtilisateurs = new dtoUtilisateur().rechercheUtilisateur(selectSearch.Text, searchName.Text);
 
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
 
-                // Récupération des données:
-
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                foreach (Modeles.Utilisateurs utilisateur in listeUtilisateurs)
                 {
-                    string idUtilisateur = reader.GetString(0);
-                    string nom = reader.GetString(1);
-                    string prénom = reader.GetString(2);
-                    string email = reader.GetString(3);
-                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
+                    dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Prenom, utilisateur.Nom, utilisateur.Email, utilisateur.active);
                 }
             }
             else if(selectSearch.Text == "Nom")
             {
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-                command.Parameters.AddWithValue("@nom", searchName.Text + "%");
-
-                command.CommandText = "SELECT * FROM utilisateurs WHERE nom LIKE @nom"; // Ecriture requête
+                List<Modeles.Utilisateurs> listeUtilisateurs = new dtoUtilisateur().rechercheUtilisateur(selectSearch.Text, searchName.Text);
 
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
 
-                // Récupération des données:
-
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                foreach (Modeles.Utilisateurs utilisateur in listeUtilisateurs)
                 {
-                    string idUtilisateur = reader.GetString(0);
-                    string nom = reader.GetString(1);
-                    string prénom = reader.GetString(2);
-                    string email = reader.GetString(3);
-                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
+                    dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Prenom, utilisateur.Nom, utilisateur.Email, utilisateur.active);
                 }
             }
             else if(selectSearch.Text == "Email")
             {
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-                command.Parameters.AddWithValue("@email","%" + searchName.Text + "%");
-
-                command.CommandText = "SELECT * FROM utilisateurs WHERE email LIKE @email"; // Ecriture requête
+                List<Modeles.Utilisateurs> listeUtilisateurs = new dtoUtilisateur().rechercheUtilisateur(selectSearch.Text, searchName.Text);
 
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
 
-                // Récupération des données:
-
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                foreach (Modeles.Utilisateurs utilisateur in listeUtilisateurs)
                 {
-                    string idUtilisateur = reader.GetString(0);
-                    string nom = reader.GetString(1);
-                    string prénom = reader.GetString(2);
-                    string email = reader.GetString(3);
-                    string verif = reader.GetString(6);
 
-                    dataGridView1.Rows.Add(idUtilisateur, prénom, nom, email, verif);
+                    dataGridView1.Rows.Add(utilisateur.IdUtilisateur, utilisateur.Prenom, utilisateur.Nom, utilisateur.Email, utilisateur.active);
                 }
             }
-            conn.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

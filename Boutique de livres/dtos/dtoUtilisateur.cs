@@ -141,7 +141,131 @@ using BCrypt.Net;
             return true;
         }
 
+        public List<Utilisateurs> rechercheUtilisateur(string mode, string saisie)
+        {
+            conn.Open();
 
+            if (mode == "Prénom")
+            {
+
+                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+                command.Parameters.AddWithValue("@prenom", saisie + "%");
+
+                command.CommandText = "SELECT idUtilisateur, prenom, nom, email, mdp, idPermission, active FROM utilisateurs WHERE prenom LIKE @prenom"; // Ecriture requête
+
+                // Récupération des données:
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), " ", reader.GetInt32(5), reader.GetInt32(6));
+
+                    listeUtilisateur.Add(utilisateur);
+                }
+
+            }
+            else if (mode == "Identifiant")
+            {
+                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+                command.Parameters.AddWithValue("@id", saisie + "%");
+
+                command.CommandText = "SELECT idUtilisateur, prenom, nom, email, mdp, idPermission, active FROM utilisateurs WHERE idUtilisateur LIKE @id"; // Ecriture requête
+
+                // Récupération des données:
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(5), reader.GetInt32(5), reader.GetInt32(6));
+
+                    listeUtilisateur.Add(utilisateur);
+                }
+            }
+            else if (mode == "Nom")
+            {
+                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+                command.Parameters.AddWithValue("@nom", saisie + "%");
+
+                command.CommandText = "SELECT idUtilisateur, prenom, nom, email, mdp, idPermission, active FROM utilisateurs WHERE nom LIKE @nom"; // Ecriture requête
+
+                // Récupération des données:
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), " ", reader.GetInt32(5), reader.GetInt32(6));
+
+                    listeUtilisateur.Add(utilisateur);
+                }
+            }
+            else if (mode == "Email")
+            {
+                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+                command.Parameters.AddWithValue("@email", "%" + saisie + "%");
+
+                command.CommandText = "SELECT idUtilisateur, prenom, nom, email, mdp, idPermission, active FROM utilisateurs WHERE email LIKE @email"; // Ecriture requête
+                // Récupération des données:
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Utilisateurs utilisateur = new Utilisateurs(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), " ", reader.GetInt32(5), reader.GetInt32(6));
+
+                    listeUtilisateur.Add(utilisateur);
+                }
+            }
+            conn.Close();
+
+            return listeUtilisateur ;
+        }
+
+        public bool updateUser(string idUser, string prenom, string nom, string email, bool permission)
+        {
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+            command.Parameters.AddWithValue("@id", idUser);
+
+            command.Parameters.AddWithValue("@nom", prenom);
+
+            command.Parameters.AddWithValue("@prenom", nom);
+
+            command.Parameters.AddWithValue("@email", email); // Ajout des VALUES de la requête
+
+            if (permission == true)
+            {
+                command.Parameters.AddWithValue("@verif", 1);
+
+                command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@verif", 0);
+                command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
+            }
+
+            if (command.ExecuteNonQuery() > 0) // Si requête réussie
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public bool deleteUser(int idUser)
         {

@@ -38,6 +38,14 @@ namespace Boutique_de_livres.Modeles
 
         public int verif { get { return _verif; } set { _verif = value; } }
 
+        private string _utilisateur;
+
+        public string utilisateur { get { return _utilisateur; } set { _utilisateur = value; } }
+        
+        private string _titreLivre;
+
+        public string titreLivre { get { return _titreLivre; } set { _titreLivre = value; } }
+
         public Commentaires(int idCommentaire = 0)
         {
             if (idCommentaire > 0)
@@ -65,14 +73,16 @@ namespace Boutique_de_livres.Modeles
         }
 
 
-        public Commentaires(int idCommentaire, string contenu, string entete, int idUtilisateur, int idLivre, string date_heure, int verif)
+        public Commentaires(int idCommentaire, string contenu, string entete, int idUtilisateur, string utilisateur, int idLivre, string titreLivre, string date_heure, int verif)
         {
             this.IdCommentaire = idCommentaire;
             this.Contenu = contenu;
             this.Entete = entete;
             this.IdUtilisateur = IdUtilisateur;
+            this.utilisateur = utilisateur;
             this.idLivre= idLivre;
-            this.date_heure= date_heure;
+            this.titreLivre = titreLivre;
+            this.Date_heure= date_heure;
             this.verif= verif;
         }
 

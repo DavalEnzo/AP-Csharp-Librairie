@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 using MySql.Data.MySqlClient;
 
 namespace Boutique_de_livres.Fenetres
@@ -41,36 +43,30 @@ namespace Boutique_de_livres.Fenetres
             if(id.Text !="" && prenom.Text !="" && nom.Text !="" && email.Text != "")
             {
 
-                conn.Open();
-
-                MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-                command.Parameters.AddWithValue("@id", id.Text);
-
-                command.Parameters.AddWithValue("@nom", prenom.Text);
-
-                command.Parameters.AddWithValue("@prenom", nom.Text);
-
-                command.Parameters.AddWithValue("@email", email.Text); // Ajout des VALUES de la requête
+                bool verif;
 
                 if (permissions.Checked)
                 {
-                    command.Parameters.AddWithValue("@verif", 1);
-
-                    command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
-                }
-                else
+                    verif = true;
+                }else
                 {
-                    command.Parameters.AddWithValue("@verif", 0);
-                    command.CommandText = "UPDATE utilisateurs SET nom=@nom, prenom=@prenom, email=@email, idPermission = @verif WHERE idUtilisateur = @id"; // Ecriture requête
+                    verif = false;
                 }
 
+                dtoUtilisateur utilisateur = new dtoUtilisateur();
 
-                if (command.ExecuteNonQuery() > 0) // Si requête réussie
+                utilisateur.updateUser(id.Text, prenom.Text, nom.Text, email.Text, verif);
+
+
+                if (utilisateur.updateUser(id.Text, prenom.Text, nom.Text, email.Text, verif) == true) // Si requête réussie
                 {
                     MessageBox.Show("Modification effectuée !");
                     this.Close();
                     AdminPanel.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Il y a eu un problème lors de la modification de l'utilisateur, veuillez contacter une administrateur");
                 }
 
                 conn.Close();
