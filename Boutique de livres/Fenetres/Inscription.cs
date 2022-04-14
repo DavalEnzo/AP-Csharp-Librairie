@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 
 
 namespace Boutique_de_livres
@@ -43,7 +44,7 @@ namespace Boutique_de_livres
             if (Prenom.Text != "" && Nom.Text != "" && Mail.Text != "" && Mdp.Text != "")
             {
 
-                dtoUtilisateur inscription = new dtoUtilisateur();
+                Utilisateurs inscription = new Utilisateurs();
 
                 inscription.inscription(nom, prenom, mail, mdp);
 

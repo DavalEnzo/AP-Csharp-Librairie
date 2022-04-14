@@ -86,5 +86,53 @@ namespace Boutique_de_livres.Modeles
             this.verif= verif;
         }
 
+        public bool deleteCommentaire(int idCommentaire)
+        {
+            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+            conn.Open();
+
+            // Add the parameter to the command collection
+            command.Parameters.AddWithValue("@idCommentaire", idCommentaire);
+
+            command.CommandText = "DELETE FROM commentaires WHERE idCommentaire = @idCommentaire"; // Ecriture requête
+
+            if (command.ExecuteNonQuery() > 0) // Si requête réussie
+            {
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+
+        }
+
+        public bool approveCommentaire(int idCommentaire)
+        {
+            MySqlCommand command = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+            conn.Open();
+
+            // Add the parameter to the command collection
+            command.Parameters.AddWithValue("@idCommentaire", idCommentaire);
+
+            command.CommandText = "UPDATE commentaires SET verif = 1 WHERE idCommentaire = @idCommentaire"; // Ecriture requête
+
+            if (command.ExecuteNonQuery() > 0) // Si requête réussie
+            {
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+
+        }
     }
+
 }

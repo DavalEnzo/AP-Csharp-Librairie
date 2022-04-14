@@ -11,6 +11,7 @@ namespace Boutique_de_livres.dtos
     public class dtoLivre : Modele
     {
         protected List<Livres> listeLivre = new List<Livres>();
+        protected List<dtoGenre> listeGerne = new List<dtoGenre>();
 
         public List<Livres> getAllLivres()
         {
@@ -145,83 +146,27 @@ namespace Boutique_de_livres.dtos
             return listeLivre;
         }
 
-        public bool updateLivre(string idLivre, string titre, float prix, string date_sortie, string typeGenre, string genre)
+        public List<dtoGenre> selectAllGenres()
         {
 
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
 
-            command.Parameters.AddWithValue("@libelle", typeGenre);
-
-            command.Parameters.AddWithValue("@nomGenre", genre);
-
-            command.CommandText = "SELECT * from typeGenre LEFT JOIN genres USING(idGenre) WHERE libelle = @libelle AND genres.nomGenre = @nomGenre";
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            int idTypeGenre = 0;
-
-            int idGenre = 0;
-
-            while (reader.Read())
-            {
-                idGenre = reader.GetInt32(0);
-                idTypeGenre = reader.GetInt32(1);
-            }
-
-            conn.Close();
-
-            conn.Open();
-
-            MySqlCommand insert = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
-
-            insert.Parameters.AddWithValue("@id", idLivre);
-
-            insert.Parameters.AddWithValue("@titre", titre);
-
-            insert.Parameters.AddWithValue("@prix", prix);
-
-            insert.Parameters.AddWithValue("@dateSortie", date_sortie); // Ajout des VALUES de la requête
-
-            insert.Parameters.AddWithValue("@idtypeGenre", idTypeGenre); // Ajout des VALUES de la requête
-
-            insert.Parameters.AddWithValue("@idGenre", idGenre); // Ajout des VALUES de la requête
-
-            insert.CommandText = "UPDATE livres SET Titre=@titre, Prix=@prix, date_sortie=@dateSortie, idtypeGenre = @idtypeGenre, idGenre = @idGenre WHERE idLivre = @id";
-
-            if (insert.ExecuteNonQuery() > 0) // Si requête réussie
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
-        public List<Livres> selectAllGenres()
-        {
-
-            conn.Open();
-
-            MySqlCommand command = conn.CreateCommand();
-
-            command.CommandText = "SELECT nomGenre from genres";
+            command.CommandText = "SELECT idGenre, nomGenre from genres";
 
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                Livres livres = new Livres(0, " ", " ", 0, reader.IsDBNull(0) ? " " : reader.GetString(0), " ", " ", " ");
+                dtoGenre dtoGenre = new dtoGenre(reader.GetString(1), reader.GetInt32(0));
 
-                listeLivre.Add(livres);
+                listeGerne.Add(dtoGenre);
             }
 
             conn.Close();
 
-            return listeLivre;
+            return listeGerne;
         }
 
         public List<Livres> getNewTypeGenreFromGenre(string genre)

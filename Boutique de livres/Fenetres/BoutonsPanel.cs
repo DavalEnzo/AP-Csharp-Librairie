@@ -56,7 +56,12 @@ namespace Boutique_de_livres
 
         private void CommandesMenu_Click(object sender, EventArgs e)
         {
-
+            fenetrePrincipale.panel1.Controls.Clear();
+            Commandes myForm = new Commandes(fenetrePrincipale);
+            fenetrePrincipale.panel2.Visible = false;
+            myForm.AutoScroll = true;
+            fenetrePrincipale.panel1.Controls.Add(myForm);
+            myForm.Show();
         }
 
         private void LivresMenu_Click(object sender, EventArgs e)

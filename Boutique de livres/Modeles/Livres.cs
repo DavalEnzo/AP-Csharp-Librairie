@@ -77,6 +77,62 @@ namespace Boutique_de_livres.Modeles
             this.Auteur = auteur;
         }
 
+        public bool updateLivre(string idLivre, string titre, float prix, string date_sortie, string typeGenre, string genre)
+        {
+
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand();
+
+            command.Parameters.AddWithValue("@libelle", typeGenre);
+
+            command.Parameters.AddWithValue("@nomGenre", genre);
+
+            command.CommandText = "SELECT * from typeGenre LEFT JOIN genres USING(idGenre) WHERE libelle = @libelle AND genres.nomGenre = @nomGenre";
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            int idTypeGenre = 0;
+
+            int idGenre = 0;
+
+            while (reader.Read())
+            {
+                idGenre = reader.GetInt32(0);
+                idTypeGenre = reader.GetInt32(1);
+            }
+
+            conn.Close();
+
+            conn.Open();
+
+            MySqlCommand insert = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
+
+            insert.Parameters.AddWithValue("@id", idLivre);
+
+            insert.Parameters.AddWithValue("@titre", titre);
+
+            insert.Parameters.AddWithValue("@prix", prix);
+
+            insert.Parameters.AddWithValue("@dateSortie", date_sortie); // Ajout des VALUES de la requête
+
+            insert.Parameters.AddWithValue("@idtypeGenre", idTypeGenre); // Ajout des VALUES de la requête
+
+            insert.Parameters.AddWithValue("@idGenre", idGenre); // Ajout des VALUES de la requête
+
+            insert.CommandText = "UPDATE livres SET Titre=@titre, Prix=@prix, date_sortie=@dateSortie, idtypeGenre = @idtypeGenre, idGenre = @idGenre WHERE idLivre = @id";
+
+            if (insert.ExecuteNonQuery() > 0) // Si requête réussie
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
 
 }

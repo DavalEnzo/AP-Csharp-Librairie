@@ -61,3 +61,4 @@ C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres
 C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.Livres.resources
 C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.ModifLivre.resources
 C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique de livres.csproj.SuggestedBindingRedirects.cache
+C:\Users\Enzo\Desktop\AP boutique livre C#\Boutique de livres\Boutique de livres\obj\Debug\Boutique_de_livres.Fenetres.Commandes.resources

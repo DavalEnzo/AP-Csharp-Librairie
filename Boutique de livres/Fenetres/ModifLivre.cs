@@ -52,7 +52,7 @@ namespace Boutique_de_livres.Fenetres
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dtoLivre livre = new dtoLivre();
+            Modeles.Livres livre = new Modeles.Livres();
 
             livre.updateLivre(titrePage.Text, titre.Text, float.Parse(prix.Text), dateSortie.Text, typeGenre.Text, genre.Text);
 
@@ -72,9 +72,9 @@ namespace Boutique_de_livres.Fenetres
         {            
             genre.Items.Clear();
 
-            List<Modeles.Livres> listeGenre = new dtoLivre().selectAllGenres();
+            List<dtoGenre> listeGenre = new dtoLivre().selectAllGenres();
 
-            foreach (Modeles.Livres list in listeGenre)
+            foreach (dtoGenre list in listeGenre)
             {
                 genre.Items.Add(list.Genre);
             }
