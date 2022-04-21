@@ -31,8 +31,6 @@ namespace Boutique_de_livres
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoutonsPanel));
             this.DashBoardButton = new System.Windows.Forms.Button();
-            this.EditeursMenu = new System.Windows.Forms.Button();
-            this.StatMenu = new System.Windows.Forms.Button();
             this.CommentairesMenu = new System.Windows.Forms.Button();
             this.CommandesMenu = new System.Windows.Forms.Button();
             this.LivresMenu = new System.Windows.Forms.Button();
@@ -48,7 +46,7 @@ namespace Boutique_de_livres
             this.DashBoardButton.ForeColor = System.Drawing.Color.White;
             this.DashBoardButton.Image = global::Boutique_de_livres.Properties.Resources.abri;
             this.DashBoardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DashBoardButton.Location = new System.Drawing.Point(0, 514);
+            this.DashBoardButton.Location = new System.Drawing.Point(0, 396);
             this.DashBoardButton.Name = "DashBoardButton";
             this.DashBoardButton.Size = new System.Drawing.Size(190, 42);
             this.DashBoardButton.TabIndex = 15;
@@ -57,44 +55,6 @@ namespace Boutique_de_livres
             this.DashBoardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.DashBoardButton.UseVisualStyleBackColor = true;
             this.DashBoardButton.Click += new System.EventHandler(this.DashBoardButton_Click);
-            // 
-            // EditeursMenu
-            // 
-            this.EditeursMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EditeursMenu.FlatAppearance.BorderSize = 0;
-            this.EditeursMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditeursMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditeursMenu.ForeColor = System.Drawing.Color.White;
-            this.EditeursMenu.Image = ((System.Drawing.Image)(resources.GetObject("EditeursMenu.Image")));
-            this.EditeursMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EditeursMenu.Location = new System.Drawing.Point(0, 410);
-            this.EditeursMenu.Name = "EditeursMenu";
-            this.EditeursMenu.Size = new System.Drawing.Size(190, 42);
-            this.EditeursMenu.TabIndex = 13;
-            this.EditeursMenu.Text = "Editeurs";
-            this.EditeursMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditeursMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.EditeursMenu.UseVisualStyleBackColor = true;
-            this.EditeursMenu.Click += new System.EventHandler(this.EditeursMenu_Click);
-            // 
-            // StatMenu
-            // 
-            this.StatMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.StatMenu.FlatAppearance.BorderSize = 0;
-            this.StatMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StatMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatMenu.ForeColor = System.Drawing.Color.White;
-            this.StatMenu.Image = global::Boutique_de_livres.Properties.Resources.chart;
-            this.StatMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.StatMenu.Location = new System.Drawing.Point(0, 368);
-            this.StatMenu.Name = "StatMenu";
-            this.StatMenu.Size = new System.Drawing.Size(190, 42);
-            this.StatMenu.TabIndex = 12;
-            this.StatMenu.Text = "Statistiques";
-            this.StatMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StatMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.StatMenu.UseVisualStyleBackColor = true;
-            this.StatMenu.Click += new System.EventHandler(this.StatMenu_Click);
             // 
             // CommentairesMenu
             // 
@@ -179,8 +139,6 @@ namespace Boutique_de_livres
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.DashBoardButton);
-            this.Controls.Add(this.EditeursMenu);
-            this.Controls.Add(this.StatMenu);
             this.Controls.Add(this.CommentairesMenu);
             this.Controls.Add(this.CommandesMenu);
             this.Controls.Add(this.LivresMenu);
@@ -188,7 +146,7 @@ namespace Boutique_de_livres
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BoutonsPanel";
             this.Padding = new System.Windows.Forms.Padding(0, 200, 0, 0);
-            this.Size = new System.Drawing.Size(190, 556);
+            this.Size = new System.Drawing.Size(190, 438);
             this.Load += new System.EventHandler(this.BoutonsPanel_Load);
             this.ResumeLayout(false);
 
@@ -200,8 +158,6 @@ namespace Boutique_de_livres
         private System.Windows.Forms.Button LivresMenu;
         private System.Windows.Forms.Button CommandesMenu;
         private System.Windows.Forms.Button CommentairesMenu;
-        private System.Windows.Forms.Button StatMenu;
-        private System.Windows.Forms.Button EditeursMenu;
         private System.Windows.Forms.Button DashBoardButton;
 
     }
