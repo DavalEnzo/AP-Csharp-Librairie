@@ -51,7 +51,7 @@ namespace Boutique_de_livres.Fenetres
                     verif = false;
                 }
 
-                dtoUtilisateur utilisateur = new dtoUtilisateur();
+                Modeles.Utilisateurs utilisateur = new Modeles.Utilisateurs();
 
                 utilisateur.updateUser(id.Text, prenom.Text, nom.Text, email.Text, verif);
 

@@ -80,9 +80,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dtos\dtoCommande.cs" />
+    <Compile Include="dtos\dtoGenre.cs" />
     <Compile Include="dtos\dtoLivre.cs" />
     <Compile Include="dtos\dtoCommentaire.cs" />
     <Compile Include="dtos\dtoUtilisateur.cs" />
+    <Compile Include="Fenetres\Commandes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fenetres\Commandes.Designer.cs">
+      <DependentUpon>Commandes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +145,7 @@
     <Compile Include="Fenetres\Livres.Designer.cs">
       <DependentUpon>Livres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modeles\Commandes.cs" />
     <Compile Include="Modeles\Livres.cs" />
     <Compile Include="Modeles\Commentaires.cs" />
     <Compile Include="Modeles\Modele.cs" />
@@ -160,6 +169,9 @@
     <Compile Include="Fenetres\Utilisateurs.Designer.cs">
       <DependentUpon>Utilisateurs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Fenetres\Commandes.resx">
+      <DependentUpon>Commandes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fenetres\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Boutique_de_livres.dtos;
+using Boutique_de_livres.Modeles;
 
 namespace Boutique_de_livres.Fenetres
 {
@@ -80,10 +81,9 @@ namespace Boutique_de_livres.Fenetres
                         DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
                         int cellValue = Convert.ToInt32(selectedRow.Cells["id Utilisateur"].Value);
 
-                        dtoUtilisateur user = new dtoUtilisateur();
+                        Modeles.Utilisateurs user = new Modeles.Utilisateurs();
 
                         user.deleteUser(cellValue);
-
                         if (user.deleteUser(cellValue) == true) // Si requête réussie
                         {
 

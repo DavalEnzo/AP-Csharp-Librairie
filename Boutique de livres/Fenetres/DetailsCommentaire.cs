@@ -15,13 +15,11 @@ namespace Boutique_de_livres.Fenetres
     public partial class detailsCommentaire : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        public detailsCommentaire(string idComm, string contenu, string Utilisateur, string titre, string date_heure, string approuve)
+        public detailsCommentaire(string idComm)
         {
             InitializeComponent();
-            utilisateur.Text = Utilisateur;
-            dateComm.Text = date_heure;
-            commentaire.Text = contenu;
-            id.Text = idComm;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,11 +36,11 @@ namespace Boutique_de_livres.Fenetres
 
                 int idCommentaire = Convert.ToInt32(id.Text);
 
-                dtoCommentaire dtoCommentaire = new dtoCommentaire();
+                Modeles.Commentaires commentaires = new Modeles.Commentaires();
 
-                dtoCommentaire.deleteCommentaire(idCommentaire);
+                commentaires.deleteCommentaire(idCommentaire);
 
-                if (dtoCommentaire.deleteCommentaire(idCommentaire) == true) // Si requête réussie
+                if (commentaires.deleteCommentaire(idCommentaire) == true) // Si requête réussie
                 {
                     MessageBox.Show("Suppression effectuée");
                     Close();
@@ -59,7 +57,7 @@ namespace Boutique_de_livres.Fenetres
         {
             int idCommentaire = Convert.ToInt32(id.Text);
 
-            dtoCommentaire commentaire = new dtoCommentaire();
+            Modeles.Commentaires commentaire = new Modeles.Commentaires();
 
             commentaire.approveCommentaire(idCommentaire);
 

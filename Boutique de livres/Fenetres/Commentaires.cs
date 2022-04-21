@@ -49,13 +49,8 @@ namespace Boutique_de_livres.Fenetres
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
                 string idComm = (Convert.ToString(selectedRow.Cells["id Commentaire"].Value));
-                string contenu = (Convert.ToString(selectedRow.Cells["Contenu"].Value));
-                string Utilisateur = (Convert.ToString(selectedRow.Cells["Utilisateur"].Value));
-                string titre = (Convert.ToString(selectedRow.Cells["Titre du livre"].Value));
-                string date_heure = (Convert.ToString(selectedRow.Cells["Date et heure de publication"].Value));
-                string approuve = (Convert.ToString(selectedRow.Cells["Approuvé ?"].Value));
 
-                detailsCommentaire DetailsC = new detailsCommentaire(idComm, contenu, Utilisateur, titre, date_heure, approuve);
+                detailsCommentaire DetailsC = new detailsCommentaire(idComm);
                 DetailsC.Show();
                 fenetrePrincipale.Hide();
             }
