@@ -106,6 +106,7 @@ namespace Boutique_de_livres.Modeles
 
             conn.Open();
 
+
             MySqlCommand insert = conn.CreateCommand(); // On prépare la commande SQL (requête SQL)
 
             insert.Parameters.AddWithValue("@id", idLivre);
@@ -124,12 +125,15 @@ namespace Boutique_de_livres.Modeles
 
             if (insert.ExecuteNonQuery() > 0) // Si requête réussie
             {
+                conn.Close();
                 return true;
             }
             else
             {
+                conn.Close();
                 return false;
             }
+
 
         }
 

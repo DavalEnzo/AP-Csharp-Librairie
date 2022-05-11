@@ -72,7 +72,7 @@ namespace Boutique_de_livres.Fenetres
                 string titre = (Convert.ToString(selectedRow.Cells["Titre"].Value));
                 string prix = (Convert.ToString(selectedRow.Cells["Prix (en euros)"].Value));
                 string auteur = (Convert.ToString(selectedRow.Cells["Auteur"].Value));
-                DateTime dateSortie = (Convert.ToDateTime(selectedRow.Cells["Date de publication"].Value));
+                string dateSortie = (Convert.ToString(selectedRow.Cells["Date de publication"].Value));
                 string typeGenre = (Convert.ToString(selectedRow.Cells["Type de genre"].Value));
                 string genre = (Convert.ToString(selectedRow.Cells["Genre"].Value));
                 string editeur = (Convert.ToString(selectedRow.Cells["Editeur"].Value));

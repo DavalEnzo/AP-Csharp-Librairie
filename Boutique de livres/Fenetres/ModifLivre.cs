@@ -15,11 +15,11 @@ namespace Boutique_de_livres.Fenetres
     public partial class ModifLivre : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        public ModifLivre(string Id, string Titre, string Prix, DateTime DateSortie, string TypeGenre, string Genre, string Editeur)
+        public ModifLivre(string Id, string Titre, string Prix, string DateSortie, string TypeGenre, string Genre, string Editeur)
         {
             InitializeComponent();
 
-            dateSortie.Value = DateSortie;
+            dateSortie.Text = DateSortie;
 
 
             titre.Text = Titre;

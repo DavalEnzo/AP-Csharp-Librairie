@@ -37,12 +37,12 @@ namespace Boutique_de_livres.Fenetres
             this.prix = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateSortie = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.typeGenre = new System.Windows.Forms.ComboBox();
             this.genre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateSortie = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,18 +143,6 @@ namespace Boutique_de_livres.Fenetres
             this.label5.TabIndex = 8;
             this.label5.Text = "Date de sortie :";
             // 
-            // dateSortie
-            // 
-            this.dateSortie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateSortie.CustomFormat = "d-MM-yyyy";
-            this.dateSortie.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateSortie.Location = new System.Drawing.Point(257, 304);
-            this.dateSortie.Name = "dateSortie";
-            this.dateSortie.Size = new System.Drawing.Size(200, 20);
-            this.dateSortie.TabIndex = 10;
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -216,16 +204,27 @@ namespace Boutique_de_livres.Fenetres
             this.label6.TabIndex = 14;
             this.label6.Text = "Genre :";
             // 
+            // dateSortie
+            // 
+            this.dateSortie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateSortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateSortie.Location = new System.Drawing.Point(257, 293);
+            this.dateSortie.Name = "dateSortie";
+            this.dateSortie.Size = new System.Drawing.Size(110, 31);
+            this.dateSortie.TabIndex = 16;
+            // 
             // ModifLivre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateSortie);
             this.Controls.Add(this.genre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.typeGenre);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateSortie);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.prix);
             this.Controls.Add(this.label4);
@@ -255,11 +254,11 @@ namespace Boutique_de_livres.Fenetres
         private System.Windows.Forms.TextBox prix;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateSortie;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox typeGenre;
         private System.Windows.Forms.ComboBox genre;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox dateSortie;
     }
 }
