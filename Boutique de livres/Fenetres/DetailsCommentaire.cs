@@ -15,11 +15,13 @@ namespace Boutique_de_livres.Fenetres
     public partial class detailsCommentaire : Form
     {
         AdminPanel AdminPanel = new AdminPanel();
-        public detailsCommentaire(string idComm)
+        public detailsCommentaire(string idComm, string contenu, string Utilisateur, string titre, string date_heure, string approuve)
         {
             InitializeComponent();
-
-
+            utilisateur.Text = Utilisateur;
+            dateComm.Text = date_heure;
+            commentaire.Text = contenu;
+            id.Text = idComm;
         }
 
         private void button1_Click(object sender, EventArgs e)
